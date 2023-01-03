@@ -10,17 +10,9 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
 /*Ondas footer*/
 
-.footer {
+.footer--waves {
     position: relative;
     text-align: center;
     color: white;
