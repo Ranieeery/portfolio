@@ -9,7 +9,7 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
     <link rel="stylesheet" href="assets/styles/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/assets/styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
 
     <title>Raniery | Portfólio</title>
   </head>
@@ -747,7 +747,7 @@
         <h2 class="section__title">Portfólio</h2>
         <span class="section__subtitle">Projetos recentes</span>
 
-        <div class="portfolio__container container swiper">
+        <div class="portfolio__container container swiper-container">
           <div class="swiper-wrapper">
             <!-- Projeto 1 -->
             <div class="portfolio__content container swiper-slide">
@@ -812,14 +812,38 @@
               </div>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next">
+              <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+          </div>
+
+          <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
         </div>
       </section>
 
       <!--==================== PROJECT IN MIND ====================-->
-      <section class="project section"></section>
+      <section class="project section">
+        <div class="project__bg">
+          <div class="project__container container grid">
+            <div class="project__data">
+              <h2 class="project__title">Projeto em mente?</h2>
+              <p class="project__description">
+                Entre em contato comigo e vamos conversar sobre o seu projeto.
+              </p>
+              <a href="#contact" class="button button--flex button--white">
+                Entrar em contato
+                <i class="uil uil-message project__icon button__icon"></i>
+              </a>
+            </div>
+
+            <img src="assets/images/aboutme.jpg" alt="" class="project__img" />
+          </div>
+        </div>
+      </section>
 
       <!--==================== TESTIMONIAL ====================-->
       <section class="testimonial section"></section>
