@@ -21,7 +21,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
             <li class="nav__item">
-              <a href="#home" class="nav__link">
+              <a href="#home" class="nav__link active-link">
                 <i class="uil uil-estate nav__icon"></i> Home
               </a>
             </li>
@@ -814,10 +814,10 @@
           </div>
           <!-- Add Arrows -->
           <div class="swiper-button-next">
-              <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-            </div>
-            <div class="swiper-button-prev">
-              <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
           </div>
 
           <!-- Add Pagination -->
@@ -845,18 +845,103 @@
         </div>
       </section>
 
-      <!--==================== TESTIMONIAL ====================-->
-      <section class="testimonial section"></section>
-
       <!--==================== CONTACT ME ====================-->
-      <section class="contact section" id="contact"></section>
+      <section class="contact section" id="contact">
+        <h2 class="section__title">Contato</h2>
+        <span class="section__subtitle">Entre em contato comigo</span>
+
+        <div class="contact__container container grid">
+          <div>
+            <div class="contact__information">
+              <i class="uil uil-phone contact__icon"></i>
+
+              <div>
+                <h3 class="contact__title">Telefone (Celular)</h3>
+                <span class="contact__subtitle">+55 11 99999-9999</span>
+              </div>
+            </div>
+
+            <div class="contact__information">
+              <i class="uil uil-envelope contact__icon"></i>
+
+              <div>
+                <h3 class="contact__title">E-mail</h3>
+                <span class="contact__subtitle">raniery2003@hotmail.com</span>
+              </div>
+            </div>
+
+            <div class="contact__information">
+              <i class="uil uil-map-marker contact__icon"></i>
+
+              <div>
+                <h3 class="contact__title">Localização</h3>
+                <span class="contact__subtitle">Contagem, MG</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container grid">
+          <div>
+            <h1 class="footer__title">Raniery</h1>
+            <span class="footer__subtitle">Desenvolvedor Web</span>
+          </div>
 
-    <!--==================== SCROLL TOP ====================-->
+          <ul class="footer__links">
+            <li>
+              <a href="#home" class="footer__link">Início</a>
+            </li>
+            <li>
+              <a href="#about" class="footer__link">Sobre</a>
+            </li>
+            <li>
+              <a href="#services" class="footer__link">Serviços</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="footer__link">Portfólio</a>
+            </li>
+            <li>
+              <a href="#contact" class="footer__link">Contato</a>
+            </li>
+          </ul>
 
+          <div class="footer__socials">
+            <a
+              href="https://www.linkedin.com/in/ranierygoulart/"
+              class="footer__social"
+              target="_blank"
+            >
+              <i class="uil uil-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/Ranieeery"
+              class="footer__social"
+              target="_blank"
+            >
+              <i class="uil uil-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/ranierygoulart/"
+              class="footer__social"
+              target="_blank"
+            >
+              <i class="uil uil-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <p class="footer__copy">&#169; Raniery. Todos os direitos reservados</p>
+      </div>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="uil uil-arrow-up scrollup__icon"></i> 
+    </a>
+    
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
