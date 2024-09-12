@@ -1,4 +1,5 @@
-const navMenu = document.getElementById("nav-menu"),
+document.addEventListener('DOMContentLoaded', function() {
+  const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close");
 
@@ -119,7 +120,6 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
-
 // Dark theme
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
@@ -149,4 +149,4 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
-
+});
