@@ -760,7 +760,7 @@ img {
 }
 
 .contact__container {
-  row-gap: 3rem;
+  row-gap: 0rem;
 }
 
 .contact__information {
