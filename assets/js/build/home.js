@@ -1,35 +1,42 @@
 import { createElement } from "../utils.js";
 
 export function createHomeSection() {
-    const section = createElement("section", ["home", "section"], { id: "home" });
+  const section = createElement("section", ["home", "section"], { id: "home" });
 
-    const container = createElement("div", [
-        "home__container",
-        "container",
-        "grid",
-    ]);
-    const content = createElement("div", ["home__content", "grid"]);
+  const container = createElement("div", [
+    "home__container",
+    "container",
+    "grid",
+  ]);
+  const content = createElement("div", ["home__content", "grid"]);
 
-    const social = createElement("div", ["home__social"]);
-    const socialLinks = [{ href: "https://www.linkedin.com/in/ranierygoulart/", icon: ["uil", "uil-linkedin"] },
+  const social = createElement("div", ["home__social"]);
+  const socialLinks = [
+    {
+      href: "https://www.linkedin.com/in/ranierygoulart/",
+      icon: ["uil", "uil-linkedin"],
+    },
     { href: "https://github.com/Ranieeery", icon: ["uil", "uil-github"] },
-    { href: "https://www.instagram.com/ranierygoulart/", icon: ["uil", "uil-instagram"] },
-    ];
+    {
+      href: "https://www.instagram.com/ranierygoulart/",
+      icon: ["uil", "uil-instagram"],
+    },
+  ];
 
-    socialLinks.forEach((link) => {
-        const anchor = createElement("a", ["home__social-icon"], {
-            href: link.href,
-            target: "_blank",
-        });
-        const icon = createElement("i", link.icon);
-        anchor.appendChild(icon);
-        social.appendChild(anchor);
+  socialLinks.forEach((link) => {
+    const anchor = createElement("a", ["home__social-icon"], {
+      href: link.href,
+      target: "_blank",
     });
+    const icon = createElement("i", link.icon);
+    anchor.appendChild(icon);
+    social.appendChild(anchor);
+  });
 
-    const imgDiv = createElement("div", ["home__img"]);
+  const imgDiv = createElement("div", ["home__img"]);
 
-    imgDiv.classList.add("home__img");
-    imgDiv.innerHTML = `
+  imgDiv.classList.add("home__img");
+  imgDiv.innerHTML = `
     <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <mask id="mask0" mask-type="alpha">
         <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
@@ -47,43 +54,43 @@ export function createHomeSection() {
     </svg>
   `;
 
-    const homeData = createElement("div", ["home__data"]);
-    const title = createElement("h1", ["home__title"]);
-    title.textContent = "Raniery Meireles";
-    const subtitle = createElement("h3", ["home__subtitle"]);
-    subtitle.textContent = "Desenvolvedor Fullstack";
-    const description = createElement("p", ["home__description"]);
-    description.textContent =
-        "Estudante de Ciência da Computação apaixonado por tecnologia e programação.";
-    const button = createElement("a", ["button", "button--flex"], {
-        href: "#contact",
-    });
-    button.innerHTML = 'Contato <i class="uil uil-message button__icon"></i>';
+  const homeData = createElement("div", ["home__data"]);
+  const title = createElement("h1", ["home__title"]);
+  title.textContent = "Raniery Meireles";
+  const subtitle = createElement("h3", ["home__subtitle"]);
+  subtitle.textContent = "Desenvolvedor Fullstack";
+  const description = createElement("p", ["home__description"]);
+  description.textContent =
+    "Estudante de Ciência da Computação apaixonado por tecnologia e programação.";
+  const button = createElement("a", ["button", "button--flex"], {
+    href: "#contact",
+  });
+  button.innerHTML = 'Contato <i class="uil uil-message button__icon"></i>';
 
-    homeData.appendChild(title);
-    homeData.appendChild(subtitle);
-    homeData.appendChild(description);
-    homeData.appendChild(button);
+  homeData.appendChild(title);
+  homeData.appendChild(subtitle);
+  homeData.appendChild(description);
+  homeData.appendChild(button);
 
-    const scrollDiv = createElement("div", ["home__scroll"]);
-    const scrollButton = createElement(
-        "a",
-        ["home__scroll-button", "button--flex"],
-        { href: "#about" }
-    );
-    scrollButton.innerHTML = `
+  const scrollDiv = createElement("div", ["home__scroll"]);
+  const scrollButton = createElement(
+    "a",
+    ["home__scroll-button", "button--flex"],
+    { href: "#about" }
+  );
+  scrollButton.innerHTML = `
     <i class="uil uil-mouse-alt home__scroll-mouse"></i>
     <span class="home__scroll-name">Desça para ver mais</span>
     <i class="uil uil-arrow-down home__scroll-arrow"></i>
   `;
-    scrollDiv.appendChild(scrollButton);
+  scrollDiv.appendChild(scrollButton);
 
-    content.appendChild(social);
-    content.appendChild(imgDiv);
-    content.appendChild(homeData);
-    container.appendChild(content);
-    container.appendChild(scrollDiv);
-    section.appendChild(container);
+  content.appendChild(social);
+  content.appendChild(imgDiv);
+  content.appendChild(homeData);
+  container.appendChild(content);
+  container.appendChild(scrollDiv);
+  section.appendChild(container);
 
-    return section;
+  return section;
 }

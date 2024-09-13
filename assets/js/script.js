@@ -119,8 +119,7 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   const themeButton = document.getElementById("theme-button");
   const darkTheme = "dark-theme";
   const iconTheme = "uil-sun";
@@ -149,5 +148,4 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem("selected-theme", getCurrentTheme());
     localStorage.setItem("selected-icon", getCurrentIcon());
   });
-
 });
