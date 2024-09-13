@@ -1,26 +1,21 @@
 import { createElement } from '../utils.js';
 
 export function createSkillsSection() {
-    // Criação da seção principal
     const section = createElement('section', ['skills', 'section'], { id: 'skills' });
 
-    // Título e subtítulo
     const title = createElement('h2', ['section__title']);
     title.textContent = 'Skills';
     const subtitle = createElement('span', ['section__subtitle']);
     subtitle.textContent = 'Meu nível técnico (júnior)';
 
-    // Criação do container principal
     const container = createElement('div', ['skills__container', 'container', 'grid']);
-    
-    // Div que contém todas as categorias de skills
+
     const skillCategoriesContainer = createElement('div', []);
 
-    // Função para criar uma skill
     const createSkill = (name, percentage, className) => {
         const skillData = createElement('div', ['skills__data']);
         const titles = createElement('div', ['skills__titles']);
-        
+
         const skillName = createElement('h3', ['skills__name']);
         skillName.textContent = name;
         const skillNumber = createElement('span', ['skills__number']);
@@ -38,25 +33,24 @@ export function createSkillsSection() {
         return skillData;
     };
 
-    // Função para criar uma categoria de skills (Frontend, Backend, etc.)
     const createSkillCategory = (iconClasses, titleText, isOpen, skills) => {
         const skillContent = createElement('div', ['skills__content', isOpen ? 'skills__open' : 'skills__close']);
         const skillHeader = createElement('div', ['skills__header']);
-        
-        const skillIcon = createElement('i', iconClasses); // Agora passando como array de classes
+
+        const skillIcon = createElement('i', iconClasses);
         const headerTitle = createElement('div');
         const categoryTitle = createElement('h1', ['skills__title']);
         categoryTitle.textContent = titleText;
-        
+
 
         const arrowIcon = createElement('i', ['uil', 'uil-angle-down', 'skills__arrow']);
 
         headerTitle.appendChild(categoryTitle);
-        
+
         skillHeader.appendChild(skillIcon);
         skillHeader.appendChild(headerTitle);
         skillHeader.appendChild(arrowIcon);
-        
+
         const skillList = createElement('div', ['skills__list', 'grid']);
         skills.forEach(skill => {
             skillList.appendChild(createSkill(skill.name, skill.percentage, skill.className));
@@ -68,7 +62,6 @@ export function createSkillsSection() {
         return skillContent;
     };
 
-    // Criando categorias e suas respectivas skills
     const frontendSkills = createSkillCategory(['uil', 'uil-brackets-curly', 'skills__icon'], 'Desenvolvedor Frontend', true, [
         { name: 'HTML', percentage: '75%', className: 'skills__html' },
         { name: 'CSS', percentage: '60%', className: 'skills__css' },
@@ -93,12 +86,10 @@ export function createSkillsSection() {
         { name: 'Maven', percentage: '20%', className: 'skills__maven' },
     ]);
 
-    // Adicionando as categorias ao container de skills
     skillCategoriesContainer.appendChild(frontendSkills);
     skillCategoriesContainer.appendChild(backendSkills);
     skillCategoriesContainer.appendChild(toolsSkills);
 
-    // Adicionando todos os elementos à seção
     container.appendChild(skillCategoriesContainer);
     section.appendChild(title);
     section.appendChild(subtitle);
@@ -107,10 +98,10 @@ export function createSkillsSection() {
     setTimeout(() => {
         const skillsHeader = document.querySelectorAll(".skills__header");
         skillsHeader.forEach((el) => {
-          el.addEventListener("click", toggleSkills);
+            el.addEventListener("click", toggleSkills);
         });
-      }, 100);  // Pequeno atraso para garantir que os elementos estejam no DOM
-      
+    }, 100);
+
 
     return section;
 }
