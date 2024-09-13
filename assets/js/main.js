@@ -4,6 +4,7 @@ import { createSkillsSection } from "./build/skills.js";
 import { createQualificationSection } from "./build/qualification.js";
 import { createPortfolioSection } from "./build/portfolio.js";
 import { createContactSection } from "./build/contact.js";
+import { createFooter } from "./build/footer.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.createElement("main");

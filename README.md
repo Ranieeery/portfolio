@@ -15,6 +15,7 @@ Este é o repositório do meu site de portfólio, criado com o objetivo de exibi
 ## Como Utilizar o Projeto
 
 Clone este repositório:
+
 ```bash
 git clone https://github.com/Ranieeery/portfolio.git
 ```
