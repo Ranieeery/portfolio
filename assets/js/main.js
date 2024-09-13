@@ -3,7 +3,7 @@ import { createAboutSection } from "./build/about.js";
 import { createSkillsSection } from "./build/skills.js";
 import { createQualificationSection } from "./build/qualification.js";
 import { createPortfolioSection } from "./build/portfolio.js";
-import { createContactSection } from './build/contact.js';
+import { createContactSection } from "./build/contact.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.createElement("main");
@@ -16,5 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   main.appendChild(createSkillsSection());
   main.appendChild(createQualificationSection());
   main.appendChild(createPortfolioSection());
-    main.appendChild(createContactSection());
+  main.appendChild(createContactSection());
+
+  createFooter();
 });
