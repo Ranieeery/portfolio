@@ -17,9 +17,9 @@ export function createAboutSection() {
 
     const aboutInfo = createElement('div', ['about__info']);
     const infoItems = [
-        { title: 'Sem', subtitle: 'experiência na área' },
-        { title: '03+', subtitle: 'projetos completados' },
-        { title: '02', subtitle: 'empresas trabalhadas' }
+        { title: 'Sem', subtitle: 'experiência </br>na área' },
+        { title: '03+', subtitle: 'projetos </br>completados' },
+        { title: '02', subtitle: 'empresas </br>trabalhadas' }
     ];
 
     infoItems.forEach(item => {
