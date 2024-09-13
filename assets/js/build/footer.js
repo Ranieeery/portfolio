@@ -8,7 +8,6 @@ function createFooter() {
     const footerContainer = document.createElement("div");
     footerContainer.classList.add("footer__container", "container", "grid");
   
-    // Alinhamento do título e subtítulo
     const alignText = document.createElement("div");
     alignText.classList.add("align--text");
   
@@ -23,7 +22,6 @@ function createFooter() {
     alignText.appendChild(title);
     alignText.appendChild(subtitle);
   
-    // Links
     const footerLinks = document.createElement("ul");
     footerLinks.classList.add("footer__links");
   
@@ -44,7 +42,6 @@ function createFooter() {
       footerLinks.appendChild(li);
     });
   
-    // Social links
     const footerSocials = document.createElement("div");
     footerSocials.classList.add("footer__socials");
   
@@ -73,12 +70,10 @@ function createFooter() {
       footerSocials.appendChild(a);
     });
   
-    // Footer copy text
     const copyText = document.createElement("p");
     copyText.classList.add("footer__copy");
     copyText.innerHTML = "&#169; Raniery. Todos os direitos reservados";
   
-    // Append elements
     footerContainer.appendChild(alignText);
     footerContainer.appendChild(footerLinks);
     footerContainer.appendChild(footerSocials);
@@ -87,7 +82,6 @@ function createFooter() {
     footerBg.appendChild(copyText);
     footer.appendChild(footerBg);
   
-    // Append footer at the end of the body
     document.body.appendChild(footer);
   }
   
