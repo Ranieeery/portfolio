@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function About() {
     const infoItems = [
         { title: "2 anos", subtitle: "de experiência </br>na área" },
-        { title: "03+", subtitle: "projetos </br>completados" },
-        { title: "02", subtitle: "empresas </br>trabalhadas" },
+        { title: "20+", subtitle: "repositórios </br>no Github" },
+        { title: "03", subtitle: "empresas </br>trabalhadas" },
     ];
 
     return (
@@ -25,11 +25,13 @@ export default function About() {
                 />
 
                 <div className="about__data">
-                    <p className="about__description">
-                        Desenvolvedor Web com conhecimento em JavaScript, HTML,
-                        CSS, Java, SQL, PostgreSQL, Git, Docker e Linux.
-                        Atualmente cursando Ciência da Computação e estudando
-                        Spring Framework e Angular.
+                    <p className="about__description ">
+                        Desenvolvedor Fullstack com experiência em criação de APIs REST, 
+                        integração com páginas front-ent, bancos de dados relacionais e 
+                        testes unitários, e cloud com certificados AWS. Estudante de 
+                        Ciência da Computação na Uniaméricae formado em Eletroeletrônica 
+                        no CEFET-MG, utilizo o conhecimento obtido nas duas áreas para
+                        criar soluções eficientes. 
                     </p>
 
                     <div className="about__info">
