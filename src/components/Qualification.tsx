@@ -122,17 +122,17 @@ export default function Qualification() {
             <div className="qualification__container container">
                 <div className="qualification__tabs">
                     <QualificationTab
-                        icon="uil-graduation-cap"
-                        title="Educação"
-                        target="education"
-                        isActive={activeTab === "education"}
-                        onClick={setActiveTab}
-                    />
-                    <QualificationTab
                         icon="uil-briefcase-alt"
                         title="Trabalho"
                         target="work"
                         isActive={activeTab === "work"}
+                        onClick={setActiveTab}
+                    />
+                    <QualificationTab
+                        icon="uil-graduation-cap"
+                        title="Educação"
+                        target="education"
+                        isActive={activeTab === "education"}
                         onClick={setActiveTab}
                     />
                 </div>
@@ -140,9 +140,7 @@ export default function Qualification() {
                 <div className="qualification__sections">
                     <div
                         className={`qualification__content ${
-                            activeTab === "education"
-                                ? "qualification__active"
-                                : ""
+                            activeTab === "education" ? "qualification__active" : ""
                         }`}
                         data-content=""
                         id="education"
