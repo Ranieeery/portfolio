@@ -34,8 +34,8 @@ export default function Portfolio() {
             image: "/images/chatbot.png",
             modalContent: {
                 title: "Clínica Médica API",
-                description:
-                    "API Rest para gerenciamento de consultório médico desenvolvida com Spring Boot e MySQL.",
+                description: `API Rest para gerenciamento de consultório médico 
+                desenvolvida com Spring Boot e MySQL.`,
                 details: [
                     "Java",
                     "Spring Boot 3",
@@ -51,7 +51,8 @@ export default function Portfolio() {
         {
             iconClasses: ["uil", "uil-meeting-board", "services__icon"],
             titleText: "IA para bot de<br />recomendação",
-            projectLink: "https://github.com/Ranieeery/openai-ecommerce-api-integration",
+            projectLink:
+                "https://github.com/Ranieeery/openai-ecommerce-api-integration",
             image: "/images/ecommerce.png",
             modalContent: {
                 title: "Sistema de recomendação de produtos e-commerce",
@@ -94,18 +95,44 @@ export default function Portfolio() {
             },
         },
         {
-            iconClasses: ["uil", "uil-money-bill", "services__icon"],
+            iconClasses: ["uil", "uil-shopping-basket", "services__icon"],
+            titleText: "MVC<br />Vendas C#",
+            projectLink: "https://github.com/Ranieeery/VendasMVC",
+            image: "",
+            modalContent: {
+                title: "VendasMVC",
+                description: `Consiste em uma aplicação Web de um sistema de 
+                vendas com interface gráfica para manipular o banco de dados.`,
+                details: [
+                    "C#",
+                    ".NET",
+                    "ASP.NET Core MVC",
+                    "Entity Framework",
+                    "LINQ",
+                    "MySQL",
+                    "HTML",
+                    "CSS",
+                    "Bootstrap",
+                ],
+            },
+        },
+        {
+            iconClasses: ["uil", "uil-envelope", "services__icon"],
             titleText: "Busca<br />Correios",
             projectLink: "https://github.com/Ranieeery/Busca-CEP",
             image: "",
             modalContent: {
-                title: "Banco em Java",
-                description: "",
+                title: "Busca CEP API REST",
+                description: `Programa que salva uma lista de CEPs extraídas dos
+                correios em um banco SQL e permite a consulta desses CEPs via API 
+                REST.`,
                 details: [
-                    "Programação Orientada a Objetos (POO)",
-                    "Uso de Interface",
-                    "Utilização de bibliotecas para complementar",
-                    "Métodos abstratos",
+                    "Java",
+                    "Spring Boot",
+                    "Spring Data JPA",
+                    "Lombok",
+                    "MySQL",
+                    "JUnit",
                 ],
             },
         },
@@ -117,11 +144,7 @@ export default function Portfolio() {
             modalContent: {
                 title: "Fitlife",
                 description: "Uma landing page de uma academia fictícia",
-                details: [
-                    "HTML",
-                    "CSS",
-                    "Firebase",
-                ],
+                details: ["HTML", "CSS", "Firebase"],
             },
         },
     ];
