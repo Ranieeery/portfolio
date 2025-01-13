@@ -1,49 +1,47 @@
-'use client'
+"use client";
 
 interface FooterLink {
-    href: string
-    text: string
+    href: string;
+    text: string;
 }
 
 interface SocialLink {
-    href: string
-    icon: string
+    href: string;
+    icon: string;
 }
 
 export default function Footer() {
     const footerLinks: FooterLink[] = [
-        {href: "#home", text: "Início"},
-        {href: "#about", text: "Sobre"},
-        {href: "#portfolio", text: "Portfólio"},
-        {href: "#contact", text: "Contato"}
-    ]
+        { href: "#home", text: "Início" },
+        { href: "#about", text: "Sobre" },
+        { href: "#portfolio", text: "Portfólio" },
+        { href: "#contact", text: "Contato" },
+    ];
 
     const socialLinks: SocialLink[] = [
         {
             href: "https://www.linkedin.com/in/ranierygoulart/",
-            icon: "uil uil-linkedin"
+            icon: "uil uil-linkedin",
         },
         {
             href: "https://github.com/Ranieeery",
-            icon: "uil uil-github"
+            icon: "uil uil-github",
         },
         {
             href: "https://www.instagram.com/ranierygoulart/",
-            icon: "uil uil-instagram"
-        }
-    ]
+            icon: "uil uil-instagram",
+        },
+    ];
 
     return (
         <footer className="footer">
             <div className="footer__bg">
                 <div className="footer__container container grid">
                     <div className="align--text">
-                        <h1 className="footer__title">
-                            &#60;/Raniery&#62;
-                        </h1>
+                        <h1 className="footer__title">&#60;/Raniery&#62;</h1>
                         <span className="footer__subtitle">
-              Desenvolvedor Web
-            </span>
+                            Desenvolvedor Web
+                        </span>
                     </div>
 
                     <ul className="footer__links">
@@ -76,5 +74,5 @@ export default function Footer() {
                 </p>
             </div>
         </footer>
-    )
+    );
 }

@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import {useState} from 'react'
+import { useState } from "react";
 
 interface ModalContent {
-    title: string
-    details: string[]
+    title: string;
+    details: string[];
 }
 
 interface ServiceItem {
-    iconClasses: string[]
-    titleText: string
-    projectLink: string
-    modalContent: ModalContent
+    iconClasses: string[];
+    titleText: string;
+    projectLink: string;
+    modalContent: ModalContent;
 }
 
 export default function Portfolio() {
-    const [activeModal, setActiveModal] = useState<number | null>(null)
+    const [activeModal, setActiveModal] = useState<number | null>(null);
 
     const serviceItems: ServiceItem[] = [
         {
@@ -59,21 +59,21 @@ export default function Portfolio() {
                 ],
             },
         },
-    ]
+    ];
 
     const ServiceContent = ({
-                                item,
-                                index
-                            }: {
-        item: ServiceItem
-        index: number
+        item,
+        index,
+    }: {
+        item: ServiceItem;
+        index: number;
     }) => (
         <div className="services__content">
             <div>
-                <i className={item.iconClasses.join(' ')}></i>
+                <i className={item.iconClasses.join(" ")}></i>
                 <h3
                     className="services__title"
-                    dangerouslySetInnerHTML={{__html: item.titleText}}
+                    dangerouslySetInnerHTML={{ __html: item.titleText }}
                 />
             </div>
 
@@ -81,15 +81,21 @@ export default function Portfolio() {
                 className="button button--flex button--small button--link services__button"
                 onClick={() => setActiveModal(index)}
             >
-        Ver mais
-        <i className="uil uil-arrow-right button__icon"></i>
-      </span>
+                Ver mais
+                <i className="uil uil-arrow-right button__icon"></i>
+            </span>
 
-            <div className={`services__modal ${activeModal === index ? 'active-modal' : ''}`}>
+            <div
+                className={`services__modal ${
+                    activeModal === index ? "active-modal" : ""
+                }`}
+            >
                 <div className="services__modal-content">
                     <h4
                         className="services__modal-title"
-                        dangerouslySetInnerHTML={{__html: item.modalContent.title}}
+                        dangerouslySetInnerHTML={{
+                            __html: item.modalContent.title,
+                        }}
                     />
 
                     <i
@@ -98,45 +104,46 @@ export default function Portfolio() {
                     ></i>
 
                     <ul className="services__modal-services grid">
-                        {item.modalContent.details.map((detail, detailIndex) => (
-                            <li key={detailIndex} className="services__modal-service">
-                                <i className="uil uil-check-circle services__modal-icon"></i>
-                                <p>{detail}</p>
-                            </li>
-                        ))}
+                        {item.modalContent.details.map(
+                            (detail, detailIndex) => (
+                                <li
+                                    key={detailIndex}
+                                    className="services__modal-service"
+                                >
+                                    <i className="uil uil-check-circle services__modal-icon"></i>
+                                    <p>{detail}</p>
+                                </li>
+                            )
+                        )}
                     </ul>
 
                     <span className="button button--flex button--small button--link">
-            <a
-                href={item.projectLink}
-                target="_blank"
-                rel="noreferrer"
-            >
-              Projeto
-            </a>
-            <i className="uil uil-arrow-right button__icon"></i>
-          </span>
+                        <a
+                            href={item.projectLink}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Projeto
+                        </a>
+                        <i className="uil uil-arrow-right button__icon"></i>
+                    </span>
                 </div>
             </div>
         </div>
-    )
+    );
 
     return (
         <section className="services section" id="portfolio">
             <h2 className="section__title">Portfólio</h2>
             <span className="section__subtitle">
-        Projetos realizados e tecnologias utilizadas
-      </span>
+                Projetos realizados e tecnologias utilizadas
+            </span>
 
             <div className="services__container container grid">
                 {serviceItems.map((item, index) => (
-                    <ServiceContent
-                        key={index}
-                        item={item}
-                        index={index}
-                    />
+                    <ServiceContent key={index} item={item} index={index} />
                 ))}
             </div>
         </section>
-    )
+    );
 }

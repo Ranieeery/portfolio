@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 interface ContactInfo {
     icon: string
@@ -57,11 +58,12 @@ export default function Contact() {
                             <i className="uil uil-message project__icon button__icon"></i>
                         </a>
                     </div>
-
-                    <img
+                    <Image
                         src="/images/contact.svg"
                         alt="Contact illustration"
                         className="project__img"
+                        width={500}
+                        height={500}
                     />
                 </div>
             </div>

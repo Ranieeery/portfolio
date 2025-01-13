@@ -25,6 +25,24 @@ export default function RootLayout({
                     rel="stylesheet"
                     href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
                 />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/icons/apple-touch-icon.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/icons/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/icons/favicon-16x16.png"
+                />
+                <link rel="manifest" href="assets/icons/site.webmanifest" />
             </head>
             <body className={poppins.className}>
                 {children}

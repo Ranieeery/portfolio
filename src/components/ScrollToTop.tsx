@@ -1,33 +1,33 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
-    const [showScroll, setShowScroll] = useState(false)
+    const [showScroll, setShowScroll] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY >= 560) {
-                setShowScroll(true)
+                setShowScroll(true);
             } else {
-                setShowScroll(false)
+                setShowScroll(false);
             }
-        }
+        };
 
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
-        })
-    }
+            behavior: "smooth",
+        });
+    };
 
     return (
         <a
-            className={`scrollup ${showScroll ? 'show-scroll' : ''}`}
+            className={`scrollup ${showScroll ? "show-scroll" : ""}`}
             onClick={scrollToTop}
             role="button"
             tabIndex={0}
@@ -35,5 +35,5 @@ export default function ScrollToTop() {
         >
             <i className="uil uil-arrow-up scrollup__icon"></i>
         </a>
-    )
+    );
 }

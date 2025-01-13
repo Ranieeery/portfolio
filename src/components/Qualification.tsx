@@ -34,18 +34,12 @@ const QualificationTab = ({
     </div>
 );
 
-interface DataProps {
-    items: QualificationItem[];
-}
-
 const QualificationData = ({ items }: { items: QualificationItem[] }) => (
     <>
         {items.map((item, index) => (
             <div key={index} className="qualification__data">
-                {/* For odd items (right side), add empty div first */}
                 {index % 2 === 1 && <div></div>}
-                
-                {/* For odd items (right side), add rounder div before content */}
+
                 {index % 2 === 1 && (
                     <div>
                         <span className="qualification__rounder"></span>
@@ -55,16 +49,17 @@ const QualificationData = ({ items }: { items: QualificationItem[] }) => (
                     </div>
                 )}
 
-                {/* Content div */}
                 <div>
                     <h3 className="qualification__title">{item.title}</h3>
-                    <span className="qualification__subtitle">{item.subtitle}</span>
+                    <span className="qualification__subtitle">
+                        {item.subtitle}
+                    </span>
                     <div className="qualification__calendar">
-                        <i className="uil uil-calendar-alt"></i> {item.dateRange}
+                        <i className="uil uil-calendar-alt"></i>{" "}
+                        {item.dateRange}
                     </div>
                 </div>
 
-                {/* For even items (left side), add rounder div after content */}
                 {index % 2 === 0 && (
                     <div>
                         <span className="qualification__rounder"></span>
@@ -74,7 +69,6 @@ const QualificationData = ({ items }: { items: QualificationItem[] }) => (
                     </div>
                 )}
 
-                {/* For even items (left side), add empty div last */}
                 {index % 2 === 0 && <div></div>}
             </div>
         ))}

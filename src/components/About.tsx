@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 export default function About() {
-    // Match the exact info items structure and content
     const infoItems = [
         { title: "2 anos", subtitle: "de experiência </br>na área" },
         { title: "03+", subtitle: "projetos </br>completados" },
@@ -16,7 +15,6 @@ export default function About() {
             <span className="section__subtitle">Introdução</span>
 
             <div className="about__container container grid">
-                {/* Update image source and alt text to match */}
                 <Image
                     src="/images/about.svg" // Update path
                     alt=""
@@ -40,7 +38,6 @@ export default function About() {
                                 <span className="about__info-title">
                                     {item.title}
                                 </span>
-                                {/* Match the HTML structure for subtitles */}
                                 <span
                                     className="about__info-name"
                                     dangerouslySetInnerHTML={{
