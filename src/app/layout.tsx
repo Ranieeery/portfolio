@@ -42,7 +42,7 @@ export default function RootLayout({
                     sizes="16x16"
                     href="/icons/favicon-16x16.png"
                 />
-                <link rel="manifest" href="assets/icons/site.webmanifest" />
+                <link rel="manifest" href="/icons/site.webmanifest" />
             </head>
             <body className={poppins.className}>
                 {children}

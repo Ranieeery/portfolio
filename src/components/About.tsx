@@ -16,7 +16,7 @@ export default function About() {
 
             <div className="about__container container grid">
                 <Image
-                    src="/images/about.svg" // Update path
+                    src="/images/about.svg"
                     alt=""
                     width={200}
                     height={200}
@@ -26,12 +26,13 @@ export default function About() {
 
                 <div className="about__data">
                     <p className="about__description ">
-                        Desenvolvedor Fullstack com experiência em criação de APIs REST, 
-                        integração com páginas front-ent, bancos de dados relacionais e 
-                        testes unitários, segurança e cloud com certificados AWS. Estudante de 
-                        Ciência da Computação na Uniamérica e formado em Eletroeletrônica 
-                        no CEFET-MG, utilizo o conhecimento obtido nas duas áreas para
-                        criar soluções eficientes. 
+                        Desenvolvedor Fullstack com experiência em criação de
+                        APIs REST, integração com páginas front-ent, bancos de
+                        dados relacionais e testes unitários, segurança e cloud
+                        com certificados AWS. Estudante de Ciência da Computação
+                        na Uniamérica e formado em Eletroeletrônica no CEFET-MG,
+                        utilizo o conhecimento obtido nas duas áreas para criar
+                        soluções eficientes.
                     </p>
 
                     <div className="about__info">
