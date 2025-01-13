@@ -40,3 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .idea/
+
+# CSS source maps
+*.css.map
+
+# Generated CSS 
+.next/static/chunks/*.css
+.next/server/chunks/ssr/*.css
