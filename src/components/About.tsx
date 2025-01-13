@@ -28,8 +28,8 @@ export default function About() {
                     <p className="about__description ">
                         Desenvolvedor Fullstack com experiência em criação de APIs REST, 
                         integração com páginas front-ent, bancos de dados relacionais e 
-                        testes unitários, e cloud com certificados AWS. Estudante de 
-                        Ciência da Computação na Uniaméricae formado em Eletroeletrônica 
+                        testes unitários, segurança e cloud com certificados AWS. Estudante de 
+                        Ciência da Computação na Uniamérica e formado em Eletroeletrônica 
                         no CEFET-MG, utilizo o conhecimento obtido nas duas áreas para
                         criar soluções eficientes. 
                     </p>
