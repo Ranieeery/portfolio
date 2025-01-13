@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "minify-css": "postcss src/styles/globals.css -o src/styles/globals.min.css"
+    "lint": "next lint"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.1.0",
