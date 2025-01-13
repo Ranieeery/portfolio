@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 interface ModalContent {
     title: string;
@@ -11,6 +17,7 @@ interface ServiceItem {
     iconClasses: string[];
     titleText: string;
     projectLink: string;
+    image: string;
     modalContent: ModalContent;
 }
 
@@ -22,26 +29,14 @@ export default function Portfolio() {
             iconClasses: ["uil", "uil-arrow", "services__icon"],
             titleText: "Challenge<br />Decodificador",
             projectLink: "https://ranieeery.github.io/Dencoder/",
+            image: "/images/chatbot.png",
             modalContent: {
                 title: "Desenvolvimento<br />Frontend",
                 details: [
-                    "Manipulação do DOM através de JavaScript",
-                    "Pseudo-elementos em CSS",
-                    "Emmet Abbreviation em HTML",
-                ],
-            },
-        },
-        {
-            iconClasses: ["uil", "uil-letter-japanese-a", "services__icon"],
-            titleText: "Visor<br />Pokédex",
-            projectLink: "https://ranieeery.github.io/pokedex/",
-            modalContent: {
-                title: "Pokédex (Pokémon)",
-                details: [
-                    "Consumo de APIs com JavaScript",
-                    "Manipulação do DOM pelo usuário",
-                    "Uso de pseudo-classes em CSS",
-                    "Atributos de renderização do script na página HTML",
+                    "HTML5 e CSS3",
+                    "Javascript",
+                    "Clean Code",
+                    "Responsividade",
                 ],
             },
         },
@@ -49,6 +44,7 @@ export default function Portfolio() {
             iconClasses: ["uil", "uil-money-bill", "services__icon"],
             titleText: "Banco<br />Digital",
             projectLink: "https://github.com/Ranieeery/Desafio-banco-POO",
+            image: "/images/bank.png",
             modalContent: {
                 title: "Banco em Java",
                 details: [
@@ -61,77 +57,6 @@ export default function Portfolio() {
         },
     ];
 
-    const ServiceContent = ({
-        item,
-        index,
-    }: {
-        item: ServiceItem;
-        index: number;
-    }) => (
-        <div className="services__content">
-            <div>
-                <i className={item.iconClasses.join(" ")}></i>
-                <h3
-                    className="services__title"
-                    dangerouslySetInnerHTML={{ __html: item.titleText }}
-                />
-            </div>
-
-            <span
-                className="button button--flex button--small button--link services__button"
-                onClick={() => setActiveModal(index)}
-            >
-                Ver mais
-                <i className="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div
-                className={`services__modal ${
-                    activeModal === index ? "active-modal" : ""
-                }`}
-            >
-                <div className="services__modal-content">
-                    <h4
-                        className="services__modal-title"
-                        dangerouslySetInnerHTML={{
-                            __html: item.modalContent.title,
-                        }}
-                    />
-
-                    <i
-                        className="uil uil-times services__modal-close"
-                        onClick={() => setActiveModal(null)}
-                    ></i>
-
-                    <ul className="services__modal-services grid">
-                        {item.modalContent.details.map(
-                            (detail, detailIndex) => (
-                                <li
-                                    key={detailIndex}
-                                    className="services__modal-service"
-                                >
-                                    <i className="uil uil-check-circle services__modal-icon"></i>
-                                    <p>{detail}</p>
-                                </li>
-                            )
-                        )}
-                    </ul>
-
-                    <span className="button button--flex button--small button--link">
-                        <a
-                            href={item.projectLink}
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Projeto
-                        </a>
-                        <i className="uil uil-arrow-right button__icon"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
-    );
-
     return (
         <section className="services section" id="portfolio">
             <h2 className="section__title">Portfólio</h2>
@@ -139,11 +64,101 @@ export default function Portfolio() {
                 Projetos realizados e tecnologias utilizadas
             </span>
 
-            <div className="services__container container grid">
-                {serviceItems.map((item, index) => (
-                    <ServiceContent key={index} item={item} index={index} />
-                ))}
+            <div className="portfolio__container container">
+                <Swiper
+                    modules={[Pagination, Navigation]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+                    navigation
+                    loop={true}
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    }}
+                    className="portfolio__swiper"
+                >
+                    {serviceItems.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="portfolio__content">
+                                <Image
+                                    src={item.image}
+                                    alt={item.titleText.replace(/<br \/>/g, " ")}
+                                    width={300}
+                                    height={200}
+                                    className="portfolio__img"
+                                />
+                                <div className="portfolio__title-container">
+                                    <i className={item.iconClasses.join(" ")}></i>
+                                    <h3
+                                        className="portfolio__title"
+                                        dangerouslySetInnerHTML={{
+                                            __html: item.titleText,
+                                        }}
+                                    />
+                                </div>
+                                <span
+                                    className="button button--flex button--small button--link portfolio__button"
+                                    onClick={() => setActiveModal(index)}
+                                >
+                                    Ver mais
+                                    <i className="uil uil-arrow-right button__icon"></i>
+                                </span>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
+
+            {serviceItems.map((item, index) => (
+                <div
+                    key={index}
+                    className={`services__modal ${
+                        activeModal === index ? "active-modal" : ""
+                    }`}
+                >
+                    <div className="services__modal-content">
+                        <h4
+                            className="services__modal-title"
+                            dangerouslySetInnerHTML={{
+                                __html: item.modalContent.title,
+                            }}
+                        />
+
+                        <i
+                            className="uil uil-times services__modal-close"
+                            onClick={() => setActiveModal(null)}
+                        />
+
+                        <ul className="services__modal-services grid">
+                            {item.modalContent.details.map((detail, detailIndex) => (
+                                <li
+                                    key={detailIndex}
+                                    className="services__modal-service"
+                                >
+                                    <i className="uil uil-check-circle services__modal-icon" />
+                                    <p>{detail}</p>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <span className="button button--flex button--small button--link">
+                            <a
+                                href={item.projectLink}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Projeto
+                            </a>
+                            <i className="uil uil-arrow-right button__icon" />
+                        </span>
+                    </div>
+                </div>
+            ))}
         </section>
     );
 }
