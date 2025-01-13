@@ -1,54 +1,66 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import styles from './Header.module.css'
 
 export default function Header() {
-  const [showMenu, setShowMenu] = useState(false)
-  const [scrollHeader, setScrollHeader] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(false)
 
-  useEffect(() => {
-    const changeHeaderBackground = () => {
-      if (window.scrollY >= 80) {
-        setScrollHeader(true)
-      } else {
-        setScrollHeader(false)
-      }
-    }
+    const menuItems = [
+        { href: "#home", icon: "uil-estate", text: "Home", active: true },
+        { href: "#about", icon: "uil-user", text: "Sobre" },
+        { href: "#skills", icon: "uil-books", text: "Skills" },
+        { href: "#portfolio", icon: "uil-folder", text: "Portfólio" },
+        { href: "#contact", icon: "uil-at", text: "Contato" }
+    ]
 
-    window.addEventListener('scroll', changeHeaderBackground)
+    useEffect(() => {
+        // Theme handling logic
+        const theme = localStorage.getItem('theme')
+        if (theme === 'dark') {
+            document.body.classList.add('dark-theme')
+            setIsDarkMode(true)
+        }
+    }, [])
 
-    return () => {
-      window.removeEventListener('scroll', changeHeaderBackground)
-    }
-  }, [])
-
-  return (
-    <header className={`${styles.header} ${scrollHeader ? styles.scrollHeader : ''}`}>
-      <nav className={`${styles.nav} container`}>
-        <Link href="/" className={styles.nav__logo}>&#60;Raniery&#62;</Link>
-
-        <div className={`${styles.nav__menu} ${showMenu ? styles.showMenu : ''}`}>
-          <ul className={`${styles.nav__list} grid`}>
-            {['home', 'about', 'skills', 'portfolio', 'contact'].map((item) => (
-              <li className={styles.nav__item} key={item}>
-                <Link href={`#${item}`} className={styles.nav__link}>
-                  <i className={`uil uil-${item === 'home' ? 'estate' : item} ${styles.nav__icon}`}></i> {item.charAt(0).toUpperCase() + item.slice(1)}
+    return (
+        <header className="header" id="header">
+            <nav className="nav container">
+                <Link href="#" className="nav__logo">
+                    &#60;Raniery&#62;
                 </Link>
-              </li>
-            ))}
-          </ul>
-          <i className={`uil uil-times ${styles.nav__close}`} onClick={() => setShowMenu(false)}></i>
-        </div>
 
-        <div className={styles.nav__btns}>
-          <i className="uil uil-moon change-theme" id="theme-button"></i>
-          <div className={styles.nav__toggle} onClick={() => setShowMenu(!showMenu)}>
-            <i className="uil uil-apps"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-  )
+                <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
+                    <ul className="nav__list grid">
+                        {menuItems.map((item) => (
+                            <li key={item.href} className="nav__item">
+                                <Link href={item.href}
+                                      className={`nav__link ${item.active ? 'active-link' : ''}`}
+                                      onClick={() => setIsMenuOpen(false)}>
+                                    <i className={`uil ${item.icon} nav__icon`}></i> {item.text}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <i className="uil uil-times nav__close"
+                       onClick={() => setIsMenuOpen(false)}></i>
+                </div>
+
+                <div className="nav__btns">
+                    <i className={`uil ${isDarkMode ? 'uil-sun' : 'uil-moon'} change-theme`}
+                       onClick={() => {
+                           setIsDarkMode(!isDarkMode)
+                           document.body.classList.toggle('dark-theme')
+                           localStorage.setItem('theme', isDarkMode ? 'light' : 'dark')
+                       }}></i>
+
+                    <div className="nav__toggle"
+                         onClick={() => setIsMenuOpen(true)}>
+                        <i className="uil uil-apps"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    )
 }

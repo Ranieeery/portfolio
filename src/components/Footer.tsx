@@ -1,47 +1,80 @@
-import Link from 'next/link'
-import styles from './Footer.module.css'
+'use client'
+
+interface FooterLink {
+    href: string
+    text: string
+}
+
+interface SocialLink {
+    href: string
+    icon: string
+}
 
 export default function Footer() {
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.footer__bg}>
-        <div className={`${styles.footer__container} container grid`}>
-          <div className={styles.align__text}>
-            <h1 className={styles.footer__title}>&#60;/Raniery&#62;</h1>
-            <span className={styles.footer__subtitle}>Desenvolvedor Web</span>
-          </div>
+    const footerLinks: FooterLink[] = [
+        {href: "#home", text: "Início"},
+        {href: "#about", text: "Sobre"},
+        {href: "#portfolio", text: "Portfólio"},
+        {href: "#contact", text: "Contato"}
+    ]
 
-          <ul className={styles.footer__links}>
-            {['Início', 'Sobre', 'Portfólio', 'Contato'].map((item, index) => (
-              <li key={index}>
-                <Link href={`#${item.toLowerCase()}`} className={styles.footer__link}>
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    const socialLinks: SocialLink[] = [
+        {
+            href: "https://www.linkedin.com/in/ranierygoulart/",
+            icon: "uil uil-linkedin"
+        },
+        {
+            href: "https://github.com/Ranieeery",
+            icon: "uil uil-github"
+        },
+        {
+            href: "https://www.instagram.com/ranierygoulart/",
+            icon: "uil uil-instagram"
+        }
+    ]
 
-          <div className={styles.footer__socials}>
-            {[
-              { name: 'linkedin', url: 'https://www.linkedin.com/in/ranierygoulart/' },
-              { name: 'github', url: 'https://github.com/Ranieeery' },
-              { name: 'instagram', url: 'https://www.instagram.com/ranierygoulart/' }
-            ].map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.footer__social}
-              >
-                <i className={`uil uil-${social.name}`}></i>
-              </a>
-            ))}
-          </div>
-        </div>
+    return (
+        <footer className="footer">
+            <div className="footer__bg">
+                <div className="footer__container container grid">
+                    <div className="align--text">
+                        <h1 className="footer__title">
+                            &#60;/Raniery&#62;
+                        </h1>
+                        <span className="footer__subtitle">
+              Desenvolvedor Web
+            </span>
+                    </div>
 
-        <p className={styles.footer__copy}>&#169; Raniery. Todos os direitos reservados</p>
-      </div>
-    </footer>
-  )
+                    <ul className="footer__links">
+                        {footerLinks.map((link, index) => (
+                            <li key={index}>
+                                <a href={link.href} className="footer__link">
+                                    {link.text}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="footer__socials">
+                        {socialLinks.map((social, index) => (
+                            <a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="footer__social"
+                            >
+                                <i className={social.icon}></i>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                <p className="footer__copy">
+                    &#169; Raniery. Todos os direitos reservados
+                </p>
+            </div>
+        </footer>
+    )
 }

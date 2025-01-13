@@ -1,45 +1,68 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from './About.module.css'
+"use client";
+
+import Image from "next/image";
 
 export default function About() {
-  return (
-    <section className={`${styles.about} section`} id="about">
-      <h2 className="section__title">Sobre mim</h2>
-      <span className="section__subtitle">Introdução</span>
+    // Match the exact info items structure and content
+    const infoItems = [
+        { title: "2 anos", subtitle: "de experiência </br>na área" },
+        { title: "03+", subtitle: "projetos </br>completados" },
+        { title: "02", subtitle: "empresas </br>trabalhadas" },
+    ];
 
-      <div className={`${styles.about__container} container grid`}>
-        <Image src="/assets/images/intro.svg" alt="About image" width={300} height={300} className={styles.about__img} />
+    return (
+        <section className="about section" id="about">
+            <h2 className="section__title">Sobre mim</h2>
+            <span className="section__subtitle">Introdução</span>
 
-        <div className={styles.about__data}>
-          <p className={styles.about__description}>
-            Desenvolvedor Web com conhecimento em JavaScript, HTML, CSS, Java,
-            SQL, PostgreSQL, Git, Docker e Linux. Atualmente cursando Ciência
-            da Computação e estudando Spring Framework e Angular.
-          </p>
+            <div className="about__container container grid">
+                {/* Update image source and alt text to match */}
+                <Image
+                    src="/images/about.svg" // Update path
+                    alt=""
+                    width={200}
+                    height={200}
+                    className="about__img"
+                    priority
+                />
 
-          <div className={styles.about__info}>
-            <div>
-              <span className={styles.about__info_title}>Sem</span>
-              <span className={styles.about__info_name}>experiência <br /> na área</span>
+                <div className="about__data">
+                    <p className="about__description">
+                        Desenvolvedor Web com conhecimento em JavaScript, HTML,
+                        CSS, Java, SQL, PostgreSQL, Git, Docker e Linux.
+                        Atualmente cursando Ciência da Computação e estudando
+                        Spring Framework e Angular.
+                    </p>
+
+                    <div className="about__info">
+                        {infoItems.map((item, index) => (
+                            <div key={index}>
+                                <span className="about__info-title">
+                                    {item.title}
+                                </span>
+                                {/* Match the HTML structure for subtitles */}
+                                <span
+                                    className="about__info-name"
+                                    dangerouslySetInnerHTML={{
+                                        __html: item.subtitle,
+                                    }}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="about__buttons">
+                        <a
+                            href="/pdf/Currículo - Raniery Meireles Goulart.pdf"
+                            download=""
+                            className="button button--flex"
+                        >
+                            Baixar currículo
+                            <i className="uil uil-download-alt button__icon"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div>
-              <span className={styles.about__info_title}>03+</span>
-              <span className={styles.about__info_name}>projetos <br /> completados</span>
-            </div>
-            <div>
-              <span className={styles.about__info_title}>02</span>
-              <span className={styles.about__info_name}>empresas <br /> trabalhadas</span>
-            </div>
-          </div>
-
-          <div className={styles.about__buttons}>
-            <Link href="/assets/pdf/Currículo - Raniery Meireles Goulart.pdf" className="button button--flex" download>
-              Baixar currículo<i className="uil uil-download-alt button__icon"></i>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+    );
 }

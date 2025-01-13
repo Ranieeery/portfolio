@@ -1,21 +1,35 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import "@/styles/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["400", "500", "600"],
+});
 
-export const metadata = {
-  title: 'Raniery | Portfólio',
-  description: 'Portfolio de Raniery Meireles',
-}
+export const metadata: Metadata = {
+    title: "Raniery | Portfólio",
+    description: "Portfolio website",
+};
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+    return (
+        <html lang="pt-BR">
+            <head>
+                <link
+                    rel="stylesheet"
+                    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+                />
+            </head>
+            <body className={poppins.className}>
+                {children}
+                <SpeedInsights />
+            </body>
+        </html>
+    );
 }

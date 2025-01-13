@@ -1,41 +1,70 @@
-import Image from 'next/image'
-import styles from './Contact.module.css'
+'use client'
+
+interface ContactInfo {
+    icon: string
+    title: string
+    subtitle: string
+}
 
 export default function Contact() {
-  return (
-    <section className="contact section" id="contact">
-      <h2 className="section__title">Contato</h2>
-      <span className="section__subtitle">Entre em contato para conversarmos</span>
-      <div className={styles.contact__bg}>
-        <div className={`${styles.project__container} container grid`}>
-          <div className={styles.project__data}>
-            <div className={`${styles.contact__container} container grid`}>
-              <div>
-                {[
-                  { icon: 'phone', title: 'Telefone (Celular)', subtitle: '+55 (31) 99197-4503' },
-                  { icon: 'envelope', title: 'E-mail pessoal', subtitle: 'ranierymeireles@gmail.com' },
-                  { icon: 'map-marker', title: 'Localização', subtitle: 'Contagem, MG' }
-                ].map((item, index) => (
-                  <div className={styles.contact__information} key={index}>
-                    <i className={`uil uil-${item.icon} ${styles.contact__icon}`}></i>
-                    <div>
-                      <h3 className={styles.contact__title}>{item.title}</h3>
-                      <span className={styles.contact__subtitle}>{item.subtitle}</span>
+    const contactInfos: ContactInfo[] = [
+        {
+            icon: "uil uil-phone contact__icon",
+            title: "Telefone (Celular)",
+            subtitle: "+55 (31) 9 9197-4503"
+        },
+        {
+            icon: "uil uil-envelope contact__icon",
+            title: "E-mail pessoal",
+            subtitle: "raniery2003@hotmail.com"
+        },
+        {
+            icon: "uil uil-map-marker contact__icon",
+            title: "Localização",
+            subtitle: "Contagem, MG"
+        }
+    ]
+
+    return (
+        <section className="contact section" id="contact">
+            <h2 className="section__title">Contato</h2>
+            <span className="section__subtitle">
+        Entre em contato para conversarmos
+      </span>
+
+            <div className="contact__bg">
+                <div className="project__container container grid">
+                    <div className="project__data">
+                        <div className="contact__container container grid">
+                            {contactInfos.map((info, index) => (
+                                <div key={index} className="contact__information">
+                                    <i className={info.icon}></i>
+                                    <div>
+                                        <h3 className="contact__title">{info.title}</h3>
+                                        <span className="contact__subtitle">{info.subtitle}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <a
+                            href="mailto:raniery2003@hotmail.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="button button--flex button--white project__button"
+                        >
+                            Entrar em contato
+                            <i className="uil uil-message project__icon button__icon"></i>
+                        </a>
                     </div>
-                  </div>
-                ))}
-              </div>
+
+                    <img
+                        src="/images/contact.svg"
+                        alt="Contact illustration"
+                        className="project__img"
+                    />
+                </div>
             </div>
-
-            <a href="mailto:ranierymeireles@gmail.com" target="_blank" rel="noopener noreferrer" className={`button button--flex button--white ${styles.project__button}`}>
-              Entrar em contato
-              <i className={`uil uil-message ${styles.project__icon} button__icon`}></i>
-            </a>
-          </div>
-
-          <Image src="/assets/images/contact.svg" alt="Contact" width={300} height={300} className={styles.project__img} />
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+    )
 }
