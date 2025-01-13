@@ -51,7 +51,7 @@ export default function Portfolio() {
         {
             iconClasses: ["uil", "uil-meeting-board", "services__icon"],
             titleText: "IA para bot de<br />recomendação",
-            projectLink: "https://github.com/Ranieeery/Desafio-banco-POO",
+            projectLink: "https://github.com/Ranieeery/openai-ecommerce-api-integration",
             image: "/images/ecommerce.png",
             modalContent: {
                 title: "Sistema de recomendação de produtos e-commerce",
@@ -71,7 +71,7 @@ export default function Portfolio() {
         {
             iconClasses: ["uil", "uil-robot", "services__icon"],
             titleText: "ByteBox<br />Chatbot",
-            projectLink: "https://github.com/Ranieeery/Desafio-banco-POO",
+            projectLink: "https://github.com/Ranieeery/ecommerce-chatbot",
             image: "",
             modalContent: {
                 title: "ByteBox E-commerce Chatbot",
@@ -95,8 +95,8 @@ export default function Portfolio() {
         },
         {
             iconClasses: ["uil", "uil-money-bill", "services__icon"],
-            titleText: "Banco<br />Digital",
-            projectLink: "https://github.com/Ranieeery/Desafio-banco-POO",
+            titleText: "Busca<br />Correios",
+            projectLink: "https://github.com/Ranieeery/Busca-CEP",
             image: "",
             modalContent: {
                 title: "Banco em Java",
@@ -110,18 +110,17 @@ export default function Portfolio() {
             },
         },
         {
-            iconClasses: ["uil", "uil-money-bill", "services__icon"],
-            titleText: "Banco<br />Digital",
-            projectLink: "https://github.com/Ranieeery/Desafio-banco-POO",
+            iconClasses: ["uil", "uil-dumbbell", "services__icon"],
+            titleText: "Academia<br />Fitlife",
+            projectLink: "https://fitlife-94c49.web.app/",
             image: "",
             modalContent: {
-                title: "Banco em Java",
-                description: "",
+                title: "Fitlife",
+                description: "Uma landing page de uma academia fictícia",
                 details: [
-                    "Programação Orientada a Objetos (POO)",
-                    "Uso de Interface",
-                    "Utilização de bibliotecas para complementar",
-                    "Métodos abstratos",
+                    "HTML",
+                    "CSS",
+                    "Firebase",
                 ],
             },
         },
