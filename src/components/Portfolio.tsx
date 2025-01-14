@@ -28,7 +28,7 @@ export default function Portfolio() {
             titleText: "Clínica<br />Médica API",
             projectLink:
                 "https://github.com/Ranieeery/medical-clinic-api-with-spring",
-            image: "/images/chatbot.png",
+            image: "/images/medical-clinic-api-with-spring.png",
             modalContent: {
                 title: "Clínica Médica API",
                 description: `API Rest para gerenciamento de consultório médico 
@@ -50,7 +50,7 @@ export default function Portfolio() {
             titleText: "IA para bot de<br />recomendação",
             projectLink:
                 "https://github.com/Ranieeery/openai-ecommerce-api-integration",
-            image: "/images/ecommerce.png",
+            image: "/images/placeholder.png",
             modalContent: {
                 title: "Sistema de recomendação de produtos e-commerce",
                 description: `Um sistema de recomendação de produtos em Java que usa 
@@ -70,7 +70,7 @@ export default function Portfolio() {
             iconClasses: ["uil", "uil-robot", "services__icon"],
             titleText: "ByteBox<br />Chatbot",
             projectLink: "https://github.com/Ranieeery/ecommerce-chatbot",
-            image: "",
+            image: "/images/chatbot.png",
             modalContent: {
                 title: "ByteBox E-commerce Chatbot",
                 description: `Uma aplicação Spring Boot que implementa um chatbot 
@@ -95,7 +95,7 @@ export default function Portfolio() {
             iconClasses: ["uil", "uil-shopping-basket", "services__icon"],
             titleText: "MVC<br />Vendas C#",
             projectLink: "https://github.com/Ranieeery/VendasMVC",
-            image: "",
+            image: "/images/placeholder.png",
             modalContent: {
                 title: "VendasMVC",
                 description: `Consiste em uma aplicação Web de um sistema de 
@@ -117,7 +117,7 @@ export default function Portfolio() {
             iconClasses: ["uil", "uil-envelope", "services__icon"],
             titleText: "Busca<br />Correios",
             projectLink: "https://github.com/Ranieeery/Busca-CEP",
-            image: "",
+            image: "/images/placeholder.png",
             modalContent: {
                 title: "Busca CEP API REST",
                 description: `Programa que salva uma lista de CEPs extraídas dos
@@ -137,7 +137,7 @@ export default function Portfolio() {
             iconClasses: ["uil", "uil-dumbbell", "services__icon"],
             titleText: "Academia<br />Fitlife",
             projectLink: "https://fitlife-94c49.web.app/",
-            image: "",
+            image: "/images/placeholder.png",
             modalContent: {
                 title: "Fitlife",
                 description: "Uma landing page de uma academia fictícia",
