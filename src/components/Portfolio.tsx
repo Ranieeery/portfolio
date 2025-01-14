@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 
 interface ModalContent {
     title: string;
@@ -20,8 +24,7 @@ interface ServiceItem {
 
 export default function Portfolio() {
     const [activeModal, setActiveModal] = useState<number | null>(null);
-    const [currentIndex, setCurrentIndex] = useState(1);
-    
+
     const serviceItems: ServiceItem[] = [
         {
             iconClasses: ["uil", "uil-clinic-medical", "services__icon"],
@@ -146,24 +149,6 @@ export default function Portfolio() {
         },
     ];
 
-    const handleNext = () => {
-        setCurrentIndex((prev) => 
-            prev === serviceItems.length - 1 ? 0 : prev + 1
-        );
-    };
-
-    const handlePrev = () => {
-        setCurrentIndex((prev) => 
-            prev === 0 ? serviceItems.length - 1 : prev - 1
-        );
-    };
-
-    const visibleItems = [
-        currentIndex === 0 ? serviceItems.length - 1 : currentIndex - 1,
-        currentIndex,
-        currentIndex === serviceItems.length - 1 ? 0 : currentIndex + 1,
-    ];
-
     return (
         <section className="services section" id="portfolio">
             <h2 className="section__title">Portfólio</h2>
@@ -172,56 +157,72 @@ export default function Portfolio() {
             </span>
 
             <div className="portfolio__container container">
-                <div className="portfolio__wrapper">
-                    <button className="portfolio__nav-btn prev" onClick={handlePrev}>
-                        <i className="uil uil-angle-left-b"></i>
-                    </button>
-                    
-                    <div className="portfolio__items">
-                        <AnimatePresence mode="wait">
-                            {visibleItems.map((itemIndex, i) => (
-                                <motion.div
-                                    key={itemIndex}
-                                    className={`portfolio__content ${i === 1 ? 'active' : ''}`}
-                                    initial={{ scale: 0.8, opacity: 0.5 }}
-                                    animate={{ 
-                                        scale: i === 1 ? 1 : 0.8,
-                                        opacity: i === 1 ? 1 : 0.5
-                                    }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <Image
-                                        src={serviceItems[itemIndex].image}
-                                        alt={serviceItems[itemIndex].titleText.replace(/<br \/>/g, " ")}
-                                        width={300}
-                                        height={200}
-                                        className="portfolio__img"
+                <Swiper
+                    modules={[Navigation, EffectCoverflow, Autoplay]}
+                    effect="coverflow"
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={3}
+                    loop={true}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    coverflowEffect={{
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 2.5,
+                        slideShadows: false,
+                    }}
+                    navigation={{
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    }}
+                    className="portfolio__wrapper"
+                >
+                    {serviceItems.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="portfolio__content">
+                                <Image
+                                    src={item.image}
+                                    alt={item.titleText.replace(
+                                        /<br \/>/g,
+                                        " "
+                                    )}
+                                    width={300}
+                                    height={200}
+                                    className="portfolio__img"
+                                />
+                                <div className="portfolio__title-container">
+                                    <i
+                                        className={item.iconClasses.join(" ")}
+                                    ></i>
+                                    <h3
+                                        className="portfolio__title"
+                                        dangerouslySetInnerHTML={{
+                                            __html: item.titleText,
+                                        }}
                                     />
-                                    <div className="portfolio__title-container">
-                                        <i className={serviceItems[itemIndex].iconClasses.join(" ")}></i>
-                                        <h3
-                                            className="portfolio__title"
-                                            dangerouslySetInnerHTML={{
-                                                __html: serviceItems[itemIndex].titleText,
-                                            }}
-                                        />
-                                    </div>
-                                    <span
-                                        className="button button--flex button--small button--link portfolio__button"
-                                        onClick={() => setActiveModal(itemIndex)}
-                                    >
-                                        Ver mais
-                                        <i className="uil uil-arrow-right button__icon"></i>
-                                    </span>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
+                                </div>
+                                <span
+                                    className="button button--flex button--small button--link portfolio__button"
+                                    onClick={() => setActiveModal(index)}
+                                >
+                                    Ver mais
+                                    <i className="uil uil-arrow-right button__icon"></i>
+                                </span>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                    <div className="swiper-button-prev portfolio__nav-btn prev">
+                        <i className="uil uil-angle-left-b"></i>
                     </div>
-
-                    <button className="portfolio__nav-btn next" onClick={handleNext}>
+                    <div className="swiper-button-next portfolio__nav-btn next">
                         <i className="uil uil-angle-right-b"></i>
-                    </button>
-                </div>
+                    </div>
+                </Swiper>
             </div>
 
             {serviceItems.map((item, index) => (
