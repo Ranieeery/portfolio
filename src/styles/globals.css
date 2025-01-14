@@ -604,14 +604,22 @@ img {
 }
 
 .skill__badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     background-color: var(--first-color);
-    color: var(--container-color);
+    color: #FFF;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     font-size: var(--small-font-size);
     font-weight: var(--font-medium);
     transition: all 0.3s;
     cursor: pointer;
+}
+
+.skill__icon {
+    width: 1rem;
+    height: 1rem;
 }
 
 .skill__badge:hover {
