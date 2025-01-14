@@ -165,8 +165,9 @@ export default function Portfolio() {
                     initialSlide={1}
                     centeredSlides={true}
                     loop={true}
+                    loopAdditionalSlides={2}
                     autoplay={{
-                        delay: 3000,
+                        delay: 8000,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true,
                     }}
@@ -178,8 +179,22 @@ export default function Portfolio() {
                         slideShadows: false,
                     }}
                     navigation={{
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
+                        nextEl: ".next",
+                        prevEl: ".prev",
+                    }}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            loopAdditionalSlides: 2,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            loopAdditionalSlides: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            loopAdditionalSlides: 2,
+                        },
                     }}
                     className="portfolio__wrapper"
                 >
@@ -217,10 +232,10 @@ export default function Portfolio() {
                             </div>
                         </SwiperSlide>
                     ))}
-                    <div className="swiper-button-prev portfolio__nav-btn prev">
+                    <div className="portfolio__nav-btn prev">
                         <i className="uil uil-angle-left-b"></i>
                     </div>
-                    <div className="swiper-button-next portfolio__nav-btn next">
+                    <div className="portfolio__nav-btn next">
                         <i className="uil uil-angle-right-b"></i>
                     </div>
                 </Swiper>

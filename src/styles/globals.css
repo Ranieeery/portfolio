@@ -746,7 +746,7 @@ img {
 
 .portfolio__img {
     width: 100%;
-    height: 200px; 
+    height: 200px;
     object-fit: cover;
     border-radius: 1rem;
     margin-bottom: var(--mb-1);
@@ -774,7 +774,9 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 2rem 4rem; /* Aumentar padding horizontal para dar espaço aos botões */
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .portfolio__items {
@@ -782,42 +784,46 @@ img {
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    min-height: 450px;
+    width: 100%;
 }
 
 .portfolio__nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--first-color);
+    background-color: var(--first-color);
+    opacity: 0.8;
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.portfolio__nav-btn.prev {
-    left: 0;
-}
-
-.portfolio__nav-btn.next {
-    right: 0;
+    z-index: var(--z-tooltip);
+    transition: all 0.4s;
 }
 
 .portfolio__nav-btn:hover {
-    background: var(--first-color-alt);
+    background-color: var(--first-color-alt);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.portfolio__nav-btn.prev {
+    left: 1rem;
+}
+
+.portfolio__nav-btn.next {
+    right: 1rem;
 }
 
 .portfolio__content {
-    width: 300px;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .portfolio__content.active {
@@ -1055,6 +1061,22 @@ img {
 
     .project__img {
         width: 200px;
+    }
+
+    .portfolio__title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .portfolio__title {
+        display: none;
+    }
+
+    .portfolio__title-container i {
+        font-size: 1.5rem;
+        margin: 0;
     }
 }
 
