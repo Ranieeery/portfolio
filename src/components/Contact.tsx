@@ -1,10 +1,10 @@
-'use client'
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
 
 interface ContactInfo {
-    icon: string
-    title: string
-    subtitle: string
+    icon: string;
+    title: string;
+    subtitle: string;
 }
 
 export default function Contact() {
@@ -12,37 +12,44 @@ export default function Contact() {
         {
             icon: "uil uil-phone contact__icon",
             title: "Telefone (Celular)",
-            subtitle: "+55 (31) 9 9197-4503"
+            subtitle: "+55 (31) 9 9197-4503",
         },
         {
             icon: "uil uil-envelope contact__icon",
             title: "E-mail pessoal",
-            subtitle: "raniery2003@hotmail.com"
+            subtitle: "raniery2003@hotmail.com",
         },
         {
             icon: "uil uil-map-marker contact__icon",
             title: "Localização",
-            subtitle: "Contagem, MG"
-        }
-    ]
+            subtitle: "Contagem, MG",
+        },
+    ];
 
     return (
         <section className="contact section" id="contact">
             <h2 className="section__title">Contato</h2>
             <span className="section__subtitle">
-        Entre em contato para conversarmos
-      </span>
+                Entre em contato para conversarmos
+            </span>
 
             <div className="contact__bg">
                 <div className="project__container container grid">
                     <div className="project__data">
                         <div className="contact__container container grid">
                             {contactInfos.map((info, index) => (
-                                <div key={index} className="contact__information">
+                                <div
+                                    key={index}
+                                    className="contact__information"
+                                >
                                     <i className={info.icon}></i>
                                     <div>
-                                        <h3 className="contact__title">{info.title}</h3>
-                                        <span className="contact__subtitle">{info.subtitle}</span>
+                                        <h3 className="contact__title">
+                                            {info.title}
+                                        </h3>
+                                        <span className="contact__subtitle">
+                                            {info.subtitle}
+                                        </span>
                                     </div>
                                 </div>
                             ))}
@@ -68,5 +75,5 @@ export default function Contact() {
                 </div>
             </div>
         </section>
-    )
+    );
 }

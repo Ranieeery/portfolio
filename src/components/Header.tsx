@@ -21,12 +21,15 @@ export default function Header() {
             const sections = document.querySelectorAll("section[id]");
             const scrollY = window.pageYOffset;
 
-            sections.forEach(section => {
+            sections.forEach((section) => {
                 const sectionHeight = (section as HTMLElement).offsetHeight;
                 const sectionTop = (section as HTMLElement).offsetTop - 50;
                 const sectionId = section.getAttribute("id") || "";
 
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                if (
+                    scrollY > sectionTop &&
+                    scrollY <= sectionTop + sectionHeight
+                ) {
                     setActiveSection(sectionId);
                 }
             });
@@ -51,18 +54,25 @@ export default function Header() {
                     &#60;Raniery&#62;
                 </Link>
 
-                <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
+                <div
+                    className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}
+                    id="nav-menu"
+                >
                     <ul className="nav__list grid">
                         {menuItems.map((item) => (
                             <li key={item.href} className="nav__item">
                                 <Link
                                     href={item.href}
                                     className={`nav__link ${
-                                        activeSection === item.href.slice(1) ? "active-link" : ""
+                                        activeSection === item.href.slice(1)
+                                            ? "active-link"
+                                            : ""
                                     }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    <i className={`uil ${item.icon} nav__icon`}></i>{" "}
+                                    <i
+                                        className={`uil ${item.icon} nav__icon`}
+                                    ></i>{" "}
                                     {item.text}
                                 </Link>
                             </li>
@@ -77,15 +87,23 @@ export default function Header() {
 
                 <div className="nav__btns">
                     <i
-                        className={`uil ${isDarkMode ? "uil-sun" : "uil-moon"} change-theme`}
+                        className={`uil ${
+                            isDarkMode ? "uil-sun" : "uil-moon"
+                        } change-theme`}
                         onClick={() => {
                             setIsDarkMode(!isDarkMode);
                             document.body.classList.toggle("dark-theme");
-                            localStorage.setItem("theme", isDarkMode ? "light" : "dark");
+                            localStorage.setItem(
+                                "theme",
+                                isDarkMode ? "light" : "dark"
+                            );
                         }}
                     ></i>
 
-                    <div className="nav__toggle" onClick={() => setIsMenuOpen(true)}>
+                    <div
+                        className="nav__toggle"
+                        onClick={() => setIsMenuOpen(true)}
+                    >
                         <i className="uil uil-apps"></i>
                     </div>
                 </div>

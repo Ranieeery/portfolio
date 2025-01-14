@@ -140,7 +140,9 @@ export default function Qualification() {
                 <div className="qualification__sections">
                     <div
                         className={`qualification__content ${
-                            activeTab === "education" ? "qualification__active" : ""
+                            activeTab === "education"
+                                ? "qualification__active"
+                                : ""
                         }`}
                         data-content=""
                         id="education"
