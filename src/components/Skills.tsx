@@ -123,7 +123,7 @@ const skillsData: SkillCategory[] = [
             { name: "Ruby", icon: SimpleIcons.siRuby },
             { name: "C#", icon: getIcon("csharp") },
             { name: "SQL", icon: getIcon("sql") },
-            { name: "Shell Script", icon: SimpleIcons.siGnubash },
+            { name: "Shell", icon: SimpleIcons.siGnubash },
             { name: "C", icon: SimpleIcons.siC },
             { name: "C++", icon: SimpleIcons.siCplusplus },
             { name: "HTML", icon: SimpleIcons.siHtml5 },
