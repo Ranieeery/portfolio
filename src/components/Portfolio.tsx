@@ -178,7 +178,7 @@ export default function Portfolio() {
                     </button>
                     
                     <div className="portfolio__items">
-                        <AnimatePresence>
+                        <AnimatePresence mode="wait">
                             {visibleItems.map((itemIndex, i) => (
                                 <motion.div
                                     key={itemIndex}
