@@ -710,7 +710,6 @@ img {
     color: var(--first-color);
 }
 
-/*==================== SERVICES ====================*/
 .services__container {
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
@@ -851,7 +850,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 4rem; /* Aumentar padding horizontal para dar espaço aos botões */
+    padding: 2rem 4rem;
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -1095,8 +1094,6 @@ img {
     }
 }
 
-/*==================== MEDIA QUERIES ====================*/
-/* For small devices */
 @media screen and (max-width: 425px) {
     .container {
         margin-left: var(--mb-1);
@@ -1157,7 +1154,6 @@ img {
     }
 }
 
-/* For medium devices */
 @media screen and (min-width: 568px) {
     .home__content {
         grid-template-columns: max-content 1fr 1fr;
@@ -1349,7 +1345,6 @@ img {
     }
 }
 
-/* For large devices */
 @media screen and (min-width: 1024px) {
     .header,
     .main,

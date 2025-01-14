@@ -131,7 +131,7 @@ const skillsData: SkillCategory[] = [
         ],
     },
     {
-        category: "Ferramentas",
+        category: "Tecnologias & Frameworks",
         icon: ["uil", "uil-server", "skills__icon"],
         skills: [
             { name: "Spring Boot", icon: SimpleIcons.siSpring },
@@ -148,11 +148,11 @@ const skillsData: SkillCategory[] = [
             { name: "React.js", icon: SimpleIcons.siReact },
             { name: "Next.js", icon: SimpleIcons.siNextdotjs },
             { name: "AngularJS", icon: getIcon("angularjs") },
-            { name: "Dotnet", icon: SimpleIcons.siDotnet },
+            { name: ".NET", icon: SimpleIcons.siDotnet },
         ],
     },
     {
-        category: "Ferramentas",
+        category: "DevOps & Cloud",
         icon: ["uil", "uil-file-network", "skills__icon"],
         skills: [
             { name: "AWS", icon: SimpleIcons.siAmazonwebservices },
