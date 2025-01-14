@@ -117,6 +117,26 @@ export default function Portfolio() {
             },
         },
         {
+            iconClasses: ["uil", "uil-document-layout-left", "services__icon"],
+            titleText: "Blog Pessoal",
+            projectLink: "https://ranieeery.github.io/",
+            image: "/images/projects/placeholder.png",
+            modalContent: {
+                title: "Blog pessoal",
+                description: `Blog pessoal feito com Chirpy onde irei postar
+                sobre tecnologia, programação e outros assuntos relacionados
+                e que sejam do meu interesse.`,
+                details: [
+                    "Ruby",
+                    "Jekyll",
+                    "Shell",
+                    "Docker",
+                    "HTML",
+                    "Markdown",
+                ],
+            },
+        },
+        {
             iconClasses: ["uil", "uil-envelope", "services__icon"],
             titleText: "Busca<br />Correios",
             projectLink: "https://github.com/Ranieeery/Busca-CEP",
