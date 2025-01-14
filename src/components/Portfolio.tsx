@@ -161,8 +161,9 @@ export default function Portfolio() {
                     modules={[Navigation, EffectCoverflow, Autoplay]}
                     effect="coverflow"
                     grabCursor={true}
-                    centeredSlides={true}
                     slidesPerView={3}
+                    initialSlide={1}
+                    centeredSlides={true}
                     loop={true}
                     autoplay={{
                         delay: 3000,
@@ -173,7 +174,7 @@ export default function Portfolio() {
                         rotate: 0,
                         stretch: 0,
                         depth: 100,
-                        modifier: 2.5,
+                        modifier: 2,
                         slideShadows: false,
                     }}
                     navigation={{

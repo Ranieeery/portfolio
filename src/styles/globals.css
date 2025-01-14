@@ -824,6 +824,10 @@ img {
     z-index: 2;
 }
 
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
 .contact {
     text-align: initial;
 }
