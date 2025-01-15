@@ -40,7 +40,7 @@ export default function Footer() {
                     <div className="align--text">
                         <h1 className="footer__title">&#60;/Raniery&#62;</h1>
                         <span className="footer__subtitle">
-                            Desenvolvedor Web
+                            Desenvolvedor Fullstack
                         </span>
                     </div>
 
