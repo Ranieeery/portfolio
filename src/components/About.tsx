@@ -27,7 +27,7 @@ export default function About() {
                 <div className="about__data">
                     <p className="about__description ">
                         Desenvolvedor Fullstack com experiência em criação de
-                        APIs REST, integração com páginas front-ent, bancos de
+                        APIs REST, integração com páginas front-end, bancos de
                         dados relacionais e testes unitários, segurança e cloud
                         com certificados AWS. Estudante de Ciência da Computação
                         na Uniamérica e formado em Eletroeletrônica no CEFET-MG,
