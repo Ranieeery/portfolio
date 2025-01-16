@@ -2,19 +2,32 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
+    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+    const { language, setLanguage } = useLanguage();
+
+    const texts = language === "pt-BR" ? ptBR : en;
 
     const menuItems = [
-        { href: "#home", icon: "uil-estate", text: "Home" },
-        { href: "#about", icon: "uil-user", text: "Sobre" },
-        { href: "#skills", icon: "uil-books", text: "Skills" },
-        { href: "#portfolio", icon: "uil-folder", text: "Portfólio" },
-        { href: "#contact", icon: "uil-at", text: "Contato" },
+        { href: "#home", icon: "uil-estate", text: texts.header.home },
+        { href: "#about", icon: "uil-user", text: texts.header.about },
+        { href: "#skills", icon: "uil-books", text: texts.header.skills },
+        { href: "#portfolio", icon: "uil-folder", text: texts.header.portfolio },
+        { href: "#contact", icon: "uil-at", text: texts.header.contact },
     ];
+
+    const handleLanguageChange = (lang: string) => {
+        setLanguage(lang);
+        localStorage.setItem("language", lang);
+        setIsLangMenuOpen(false);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -77,6 +90,40 @@ export default function Header() {
                                 </Link>
                             </li>
                         ))}
+                        <div className="nav__lang">
+                    <button
+                        className="nav__lang-btn"
+                        onMouseEnter={() => setIsLangMenuOpen(true)}
+                        onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                    >
+                        <i className="uil uil-globe nav__icon"></i>
+                        <span>{texts.header.language}</span>
+                        <i className="uil uil-angle-down"></i>
+                    </button>
+                    <div
+                        className={`nav__lang-menu ${
+                            isLangMenuOpen ? "show-lang-menu" : ""
+                        }`}
+                        onMouseLeave={() => setIsLangMenuOpen(false)}
+                    >
+                        <button
+                            className={`nav__lang-option ${
+                                language === "pt-BR" ? "active" : ""
+                            }`}
+                            onClick={() => handleLanguageChange("pt-BR")}
+                        >
+                            Português
+                        </button>
+                        <button
+                            className={`nav__lang-option ${
+                                language === "en" ? "active" : ""
+                            }`}
+                            onClick={() => handleLanguageChange("en")}
+                        >
+                            English
+                        </button>
+                    </div>
+                </div>
                     </ul>
 
                     <i

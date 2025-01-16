@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "@/styles/globals.min.css";
 
 const poppins = Poppins({
@@ -45,7 +46,7 @@ export default function RootLayout({
                 <link rel="manifest" href="/icons/site.webmanifest" />
             </head>
             <body className={poppins.className}>
-                {children}
+                <LanguageProvider>{children}</LanguageProvider>
                 <SpeedInsights />
             </body>
         </html>
