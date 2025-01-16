@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type QualificationItem = {
     title: string;
@@ -77,60 +80,62 @@ const QualificationData = ({ items }: { items: QualificationItem[] }) => (
 
 export default function Qualification() {
     const [activeTab, setActiveTab] = useState("education");
+    const { language } = useLanguage();
+    const texts = language === "pt-BR" ? ptBR : en;
 
     const educationItems = [
         {
-            title: "Ciência da Computação",
-            subtitle: "Uniamérica",
-            dateRange: "jan 2023 - dez 2026",
+            title: texts.qualification.education[0].title,
+            subtitle: texts.qualification.education[0].subtitle,
+            dateRange: texts.qualification.education[0].dateRange,
         },
         {
-            title: "Oracle Next Education",
-            subtitle: "Alura + Oracle",
-            dateRange: "nov 2022 - abr 2023",
+            title: texts.qualification.education[1].title,
+            subtitle: texts.qualification.education[1].subtitle,
+            dateRange: texts.qualification.education[1].dateRange,
         },
         {
-            title: "Técnico em Eletroeletrônica",
-            subtitle: "CEFET-MG",
-            dateRange: "fev 2018 - mar 2021",
+            title: texts.qualification.education[2].title,
+            subtitle: texts.qualification.education[2].subtitle,
+            dateRange: texts.qualification.education[2].dateRange,
         },
     ];
 
     const workItems = [
         {
-            title: "Estagiário de Desenvolvimento",
-            subtitle: "Empresa 1",
-            dateRange: "ago 2023 - atual",
+            title: texts.qualification.work[0].title,
+            subtitle: texts.qualification.work[0].subtitle,
+            dateRange: texts.qualification.work[0].dateRange,
         },
         {
-            title: "Analista de Desenvolvimento de Sistemas",
-            subtitle: "ACT Digital",
-            dateRange: "jun 2022 - jan 2023",
+            title: texts.qualification.work[1].title,
+            subtitle: texts.qualification.work[1].subtitle,
+            dateRange: texts.qualification.work[1].dateRange,
         },
         {
-            title: "Técnico de Instrumentação",
-            subtitle: "MSX International",
-            dateRange: "ago 2021 - nov 2021",
+            title: texts.qualification.work[2].title,
+            subtitle: texts.qualification.work[2].subtitle,
+            dateRange: texts.qualification.work[2].dateRange,
         },
     ];
 
     return (
         <section className="qualification section">
-            <h2 className="section__title">Qualificações</h2>
-            <span className="section__subtitle">Minha jornada pessoal</span>
+            <h2 className="section__title">{texts.qualification.title}</h2>
+            <span className="section__subtitle">{texts.qualification.subtitle}</span>
 
             <div className="qualification__container container">
                 <div className="qualification__tabs">
                     <QualificationTab
                         icon="uil-briefcase-alt"
-                        title="Trabalho"
+                        title= {texts.qualification.tab[0].title}
                         target="work"
                         isActive={activeTab === "work"}
                         onClick={setActiveTab}
                     />
                     <QualificationTab
                         icon="uil-graduation-cap"
-                        title="Educação"
+                        title= {texts.qualification.tab[1].title}
                         target="education"
                         isActive={activeTab === "education"}
                         onClick={setActiveTab}

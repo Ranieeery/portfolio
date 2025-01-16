@@ -42,4 +42,43 @@ export const ptBR = {
             { category: "DevOps & Cloud" },
         ],
     },
+    qualification: {
+        title: "Qualificações",
+        subtitle: "Formação e experiência profissional",
+        tab: [{ title: "Trabalho" }, { title: "Educação" }],
+        education: [
+            {
+                title: "Ciência da Computação",
+                subtitle: "Uniamérica",
+                dateRange: "jan 2023 - dez 2026",
+            },
+            {
+                title: "Oracle Next Education",
+                subtitle: "Alura + Oracle",
+                dateRange: "nov 2022 - abr 2023",
+            },
+            {
+                title: "Técnico em Eletroeletrônica",
+                subtitle: "CEFET-MG",
+                dateRange: "fev 2018 - mar 2021",
+            },
+        ],
+        work: [
+            {
+                title: "Estagiário de Desenvolvimento",
+                subtitle: "Empresa 1",
+                dateRange: "ago 2023 - atual",
+            },
+            {
+                title: "Analista de Desenvolvimento de Sistemas",
+                subtitle: "ACT Digital",
+                dateRange: "jun 2022 - jan 2023",
+            },
+            {
+                title: "Técnico de Instrumentação",
+                subtitle: "MSX International",
+                dateRange: "ago 2021 - nov 2021",
+            },
+        ],
+    },
 };
