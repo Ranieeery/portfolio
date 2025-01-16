@@ -24,5 +24,10 @@ export const en = {
                 Science at Uniamérica and graduated in Electro-electronics
                 at CEFET-MG`,
         resume: "Download resume",
+        info: [
+            { title: "2 years", subtitle: "of experience </br>in field" },
+            { title: "20+", subtitle: "repositories </br>in Github" },
+            { title: "03", subtitle: "companies </br>worked" },
+        ],
     },
 };

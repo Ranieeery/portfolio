@@ -9,12 +9,6 @@ export default function About() {
     const { language } = useLanguage();
     const texts = language === "pt-BR" ? ptBR : en;
 
-    const infoItems = [
-        { title: "2 anos", subtitle: "de experiência </br>na área" },
-        { title: "20+", subtitle: "repositórios </br>no Github" },
-        { title: "03", subtitle: "empresas </br>trabalhadas" },
-    ];
-
     return (
         <section className="about section" id="about">
             <h2 className="section__title">{texts.about.title}</h2>
@@ -36,7 +30,7 @@ export default function About() {
                     </p>
 
                     <div className="about__info">
-                        {infoItems.map((item, index) => (
+                        {texts.about.info.map((item, index) => (
                             <div key={index}>
                                 <span className="about__info-title">
                                     {item.title}

@@ -25,5 +25,10 @@ export const ptBR = {
                 utilizo o conhecimento obtido nas duas áreas para criar
                 soluções eficientes.`,
         resume: "Baixar currículo",
+        info: [
+            { title: "2 anos", subtitle: "de experiência </br>na área" },
+            { title: "20+", subtitle: "repositórios </br>no Github" },
+            { title: "03", subtitle: "empresas </br>trabalhadas" },
+        ],
     },
 };
