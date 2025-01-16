@@ -1,8 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
+    const { language } = useLanguage();
+    const texts = language === "pt-BR" ? ptBR : en;
+
     const infoItems = [
         { title: "2 anos", subtitle: "de experiência </br>na área" },
         { title: "20+", subtitle: "repositórios </br>no Github" },
@@ -11,8 +17,8 @@ export default function About() {
 
     return (
         <section className="about section" id="about">
-            <h2 className="section__title">Sobre mim</h2>
-            <span className="section__subtitle">Introdução</span>
+            <h2 className="section__title">{texts.about.title}</h2>
+            <span className="section__subtitle">{texts.about.subtitle}</span>
 
             <div className="about__container container grid">
                 <Image
@@ -26,13 +32,7 @@ export default function About() {
 
                 <div className="about__data">
                     <p className="about__description ">
-                        Desenvolvedor Fullstack com experiência em criação de
-                        APIs REST, integração com páginas front-end, bancos de
-                        dados relacionais e testes unitários, segurança e cloud
-                        com certificados AWS. Estudante de Ciência da Computação
-                        na Uniamérica e formado em Eletroeletrônica no CEFET-MG,
-                        utilizo o conhecimento obtido nas duas áreas para criar
-                        soluções eficientes.
+                        {texts.about.description}
                     </p>
 
                     <div className="about__info">
@@ -57,7 +57,7 @@ export default function About() {
                             download=""
                             className="button button--flex"
                         >
-                            Baixar currículo
+                            {texts.about.resume}
                             <i className="uil uil-download-alt button__icon"></i>
                         </a>
                     </div>

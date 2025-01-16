@@ -17,14 +17,12 @@ export const en = {
     about: {
         title: "About me",
         subtitle: "Introduction",
-        description: `Desenvolvedor Fullstack com experiência em criação de
-                  APIs REST, integração com páginas front-end, bancos de
-                        dados relacionais e testes unitários, segurança e cloud
-                        com certificados AWS. Estudante de Ciência da Computação
-                        na Uniamérica e formado em Eletroeletrônica no CEFET-MG,
-                        utilizo o conhecimento obtido nas duas áreas para criar
-                        soluções eficientes.
-      `,
+        description: `Fullstack developer with experience creating
+                REST APIs, integration with front-end pages, relational
+                databases and unit tests, security and cloud with AWS 
+                certificates. Bachelor's degree student in Computer 
+                Science at Uniamérica and graduated in Electro-electronics
+                at CEFET-MG`,
         resume: "Download resume",
     },
 };
