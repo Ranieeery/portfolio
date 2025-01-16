@@ -92,4 +92,13 @@ export const ptBR = {
             { title: "Localização", subtitle: "Contagem, MG" },
         ],
     },
+    footer: {
+        title: "Raniery",
+        subtitle: "Desenvolvedor Fullstack",
+        note: `Raniery. Todos os direitos reservados. ${new Date().getFullYear()}`,
+        home: "Início",
+        about: "Sobre",
+        portfolio: "Portfólio",
+        contact: "Contato",
+    },
 };

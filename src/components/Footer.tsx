@@ -1,5 +1,9 @@
 "use client";
 
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 interface FooterLink {
     href: string;
     text: string;
@@ -11,11 +15,14 @@ interface SocialLink {
 }
 
 export default function Footer() {
+    const { language } = useLanguage();
+    const texts = language === "pt-BR" ? ptBR : en;
+
     const footerLinks: FooterLink[] = [
-        { href: "#home", text: "Início" },
-        { href: "#about", text: "Sobre" },
-        { href: "#portfolio", text: "Portfólio" },
-        { href: "#contact", text: "Contato" },
+        { href: "#home", text: texts.header.home },
+        { href: "#about", text: texts.header.about },
+        { href: "#portfolio", text: texts.header.portfolio },
+        { href: "#contact", text: texts.header.contact },
     ];
 
     const socialLinks: SocialLink[] = [
@@ -38,9 +45,11 @@ export default function Footer() {
             <div className="footer__bg">
                 <div className="footer__container container grid">
                     <div className="align--text">
-                        <h1 className="footer__title">&#60;/Raniery&#62;</h1>
+                        <h1 className="footer__title">
+                            &#60;/{texts.footer.title}&#62;
+                        </h1>
                         <span className="footer__subtitle">
-                            Desenvolvedor Fullstack
+                            {texts.footer.subtitle}
                         </span>
                     </div>
 
@@ -69,9 +78,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <p className="footer__copy">
-                    &#169; Raniery. Todos os direitos reservados
-                </p>
+                <p className="footer__copy">&#169; {texts.footer.note}</p>
             </div>
         </footer>
     );

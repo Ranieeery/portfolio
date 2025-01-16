@@ -91,4 +91,13 @@ export const en = {
             { title: "Location", subtitle: "Contagem - MG (Brazil)" },
         ],
     },
+    footer: {
+        title: "Raniery",
+        subtitle: "Fullstack Developer",
+        note: `Raniery. All rights reserved. ${new Date().getFullYear()}`,
+        home: "Home",
+        about: "About",
+        portfolio: "Portfolio",
+        contact: "Contact",
+    },
 };
