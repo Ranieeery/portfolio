@@ -32,7 +32,7 @@ export default function Header() {
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll("section[id]");
-            const scrollY = window.pageYOffset;
+            const scrollY = window.scrollY;
 
             sections.forEach((section) => {
                 const sectionHeight = (section as HTMLElement).offsetHeight;
