@@ -30,4 +30,15 @@ export const en = {
             { title: "03", subtitle: "companies </br>worked" },
         ],
     },
+    skills: {
+      title: "Skills",
+      subtitle: `Technologies that I've worked with or had contact with 
+      </br>in the academic environment or personal projects.`,
+      categories: [
+          { category: "Languages" },
+          { category: "Technologies & Frameworks" },
+          { category: "Databases" },
+          { category: "DevOps & Cloud" },
+      ],
+  },
 };

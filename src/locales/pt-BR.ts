@@ -31,4 +31,15 @@ export const ptBR = {
             { title: "03", subtitle: "empresas </br>trabalhadas" },
         ],
     },
+    skills: {
+        title: "Habilidades",
+        subtitle: `Tecnologias com as quais trabalho ou já tive contato no
+                </br> meio acadêmico ou em projetos pessoais.`,
+        categories: [
+            { category: "Linguagens" },
+            { category: "Tecnologias & Frameworks" },
+            { category: "Banco de Dados" },
+            { category: "DevOps & Cloud" },
+        ],
+    },
 };

@@ -1,5 +1,10 @@
+"use client";
+
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Skill {
     name: string;
@@ -99,7 +104,7 @@ const customIcons: Record<string, CustomIcon> = {
         path: "M10.002 0C4.482 0 .008 1.613.008 3.605v2.957c0 1.992 4.475 3.604 9.994 3.604 5.52 0 9.995-1.612 9.995-3.604V3.605C19.997 1.613 15.52 0 10.002 0Zm0 11.89c-5.27 0-9.614-1.472-9.994-3.338-.018.09 0 4.884 0 4.884 0 1.992 4.475 3.605 9.994 3.605 5.52 0 9.995-1.614 9.995-3.605 0 0 .01-4.795-.008-4.884-.38 1.866-4.718 3.338-9.987 3.338Zm9.985 3.621c-.38 1.865-4.715 3.337-9.985 3.337S.387 17.376.007 15.511v4.884C.007 22.387 4.483 24 10.002 24c5.52 0 9.995-1.614 9.995-3.605l-.01-4.884Z",
         svg: `<svg width="25" height="25 "role="img" viewBox="0 0 24 24"></svg>`,
         source: "Custom",
-        hex: "000000", 
+        hex: "000000",
     },
     oracle: {
         title: "Oracle",
@@ -127,9 +132,9 @@ const customIcons: Record<string, CustomIcon> = {
     },
 };
 
-const skillsData: SkillCategory[] = [
+const createSkillsData = (texts: typeof en): SkillCategory[] => [
     {
-        category: "Linguagens",
+        category: texts.skills.categories[0].category,
         icon: ["uil", "uil-brackets-curly", "skills__icon"],
         skills: [
             { name: "Java", icon: getIcon("java") },
@@ -147,8 +152,8 @@ const skillsData: SkillCategory[] = [
         ],
     },
     {
-        category: "Tecnologias & Frameworks",
-        icon: ["uil", "uil-server", "skills__icon"],
+        category: texts.skills.categories[1].category,
+        icon: ["uil", "uil-wrench", "skills__icon"],
         skills: [
             { name: "Spring Boot", icon: SimpleIcons.siSpring },
             { name: "Hibernate", icon: SimpleIcons.siHibernate },
@@ -165,7 +170,7 @@ const skillsData: SkillCategory[] = [
         ],
     },
     {
-        category: "Bancos de dados",
+        category: texts.skills.categories[2].category,
         icon: ["uil", "uil-database", "skills__icon"],
         skills: [
             { name: "MySQL", icon: SimpleIcons.siMysql },
@@ -175,10 +180,10 @@ const skillsData: SkillCategory[] = [
             { name: "Redis", icon: getIcon("redis") },
             { name: "MongoDB", icon: SimpleIcons.siMongodb },
             { name: "H2", icon: getIcon("h2") },
-        ]
+        ],
     },
     {
-        category: "DevOps & Cloud",
+        category: texts.skills.categories[3].category,
         icon: ["uil", "uil-cloud-data-connection", "skills__icon"],
         skills: [
             { name: "AWS", icon: SimpleIcons.siAmazonwebservices },
@@ -196,10 +201,19 @@ const skillsData: SkillCategory[] = [
 ];
 
 const Skills = () => {
+    const { language } = useLanguage();
+    const texts = language === "pt-BR" ? ptBR : en;
+    const skillsData = createSkillsData(texts);
+
     return (
         <section className="skills section" id="skills">
-            <h2 className="section__title">Skills</h2>
-            <span className="section__subtitle">Meu nível técnico</span>
+            <h2 className="section__title">{texts.skills.title}</h2>
+            <span
+                className="section__subtitle"
+                dangerouslySetInnerHTML={{
+                    __html: texts.skills.subtitle,
+                }}
+            />
 
             <div className="skills__container container">
                 {skillsData.map((category, index) => (
