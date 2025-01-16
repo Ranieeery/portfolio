@@ -1,8 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+    const { language } = useLanguage();
+    const texts = language === "pt-BR" ? ptBR : en;
+
     const socialLinks = [
         {
             href: "https://www.linkedin.com/in/ranierygoulart/",
@@ -70,16 +76,13 @@ export default function Home() {
                     </div>
 
                     <div className="home__data">
-                        <h1 className="home__title">Raniery Meireles</h1>
+                        <h1 className="home__title">{texts.home.title}</h1>
                         <h3 className="home__subtitle">
-                            Desenvolvedor Fullstack
+                            {texts.home.subtitle}
                         </h3>
-                        <p className="home__description">
-                            Estudante de Ciência da Computação apaixonado por
-                            tecnologia e programação.
-                        </p>
+                        <p className="home__description">{texts.home.social}</p>
                         <Link href="#contact" className="button button--flex">
-                            Contato{" "}
+                            {texts.home.contact}
                             <i className="uil uil-message button__icon"></i>
                         </Link>
                     </div>
@@ -92,7 +95,7 @@ export default function Home() {
                     >
                         <i className="uil uil-mouse-alt home__scroll-mouse"></i>
                         <span className="home__scroll-name">
-                            Desça para ver mais
+                            {texts.home.scroll}
                         </span>
                         <i className="uil uil-arrow-down home__scroll-arrow"></i>
                     </Link>
