@@ -80,4 +80,15 @@ export const en = {
             },
         ],
     },
+    portfolio: {},
+    contact: {
+        title: "Contact",
+        subtitle: "Contact me for a chat",
+        link: "Send a mail",
+        info: [
+            { title: "Phone", subtitle: "+55 (31) 9 9197-4503" },
+            { title: "E-mail", subtitle: "raniery2003@hotmail.com" },
+            { title: "Location", subtitle: "Contagem - MG (Brazil)" },
+        ],
+    },
 };

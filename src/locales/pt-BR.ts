@@ -81,4 +81,15 @@ export const ptBR = {
             },
         ],
     },
+    portfolio: {},
+    contact: {
+        title: "Contato",
+        subtitle: "Entre em contato para conversarmos",
+        link: "Entrar em contato",
+        info: [
+            { title: "Telefone (Celular)", subtitle: "+55 (31) 9 9197-4503" },
+            { title: "E-mail", subtitle: "raniery2003@hotmail.com" },
+            { title: "Localização", subtitle: "Contagem, MG" },
+        ],
+    },
 };

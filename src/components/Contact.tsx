@@ -1,5 +1,9 @@
 "use client";
+
 import Image from "next/image";
+import { en } from "@/locales/en";
+import { ptBR } from "@/locales/pt-BR";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ContactInfo {
     icon: string;
@@ -8,29 +12,32 @@ interface ContactInfo {
 }
 
 export default function Contact() {
+    const { language } = useLanguage();
+    const texts = language === "pt-BR" ? ptBR : en;
+
     const contactInfos: ContactInfo[] = [
         {
             icon: "uil uil-phone contact__icon",
-            title: "Telefone (Celular)",
-            subtitle: "+55 (31) 9 9197-4503",
+            title: texts.contact.info[0].title,
+            subtitle: texts.contact.info[0].subtitle,
         },
         {
             icon: "uil uil-envelope contact__icon",
-            title: "E-mail pessoal",
-            subtitle: "raniery2003@hotmail.com",
+            title: texts.contact.info[1].title,
+            subtitle: texts.contact.info[1].subtitle,
         },
         {
             icon: "uil uil-map-marker contact__icon",
-            title: "Localização",
-            subtitle: "Contagem, MG",
+            title: texts.contact.info[2].title,
+            subtitle: texts.contact.info[2].subtitle,
         },
     ];
 
     return (
         <section className="contact section" id="contact">
-            <h2 className="section__title">Contato</h2>
+            <h2 className="section__title">{texts.contact.title}</h2>
             <span className="section__subtitle">
-                Entre em contato para conversarmos
+                {texts.contact.subtitle}
             </span>
 
             <div className="contact__bg">
@@ -61,7 +68,7 @@ export default function Contact() {
                             rel="noreferrer"
                             className="button button--flex button--white project__button"
                         >
-                            Entrar em contato
+                            {texts.contact.link}
                             <i className="uil uil-message project__icon button__icon"></i>
                         </a>
                     </div>
