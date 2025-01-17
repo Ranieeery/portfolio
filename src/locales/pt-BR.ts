@@ -81,7 +81,172 @@ export const ptBR = {
             },
         ],
     },
-    portfolio: {},
+    portfolio: {
+        title: "Portfólio",
+        subtitle: "Projetos concluídos e tecnologias utilizadas",
+        view: "Ver mais",
+        send: "Projeto",
+        projects: {
+            medical_clinic: {
+                title: "Clínica</br>Médica API",
+                image: "/images/projects/medical-clinic-api-with-spring.png",
+                link: "https://github.com/Ranieeery/medical-clinic-api-with-spring",
+                icons: ["uil", "uil-clinic-medical", "services__icon"],
+                tags: ["Java", "MySQL", "Spring Boot", "JUnit"],
+                modal: {
+                    title: "Clínica Médica API",
+                    description: `API Rest para gerenciamento de consultório médico 
+                    desenvolvida com Java, Spring Boot e MySQL.`,
+                    details: [
+                        "Java",
+                        "Spring Boot 3",
+                        "Spring Data JPA",
+                        "MySQL",
+                        "JUnit",
+                        "Mockito",
+                        "Swagger",
+                        "Padrões de Projeto",
+                    ],
+                },
+            },
+            ia_chatbot: {
+                title: "I.A para </br>Recomendação",
+                image: "/images/projects/placeholder.png",
+                link: "https://github.com/Ranieeery/openai-ecommerce-api-integration",
+                icons: ["uil", "uil-meeting-board", "services__icon"],
+                tags: ["Java", "IA", "Spring Boot", "OpenAI"],
+                modal: {
+                    title: "Sistema de recomendação de produtos e-commerce",
+                    description: `Um sistema de recomendação de produtos em Java que usa 
+                    a API da OpenAI para fornecer recomendações personalizadas de produtos 
+                    e análise de sentimentos para avaliações de clientes.`,
+                    details: [
+                        "Java",
+                        "Maven",
+                        "OpenAI API",
+                        "JTokkit",
+                        "Inteligência Artificial (I.A.)",
+                    ],
+                },
+            },
+            bytebox: {
+                title: "ByteBox</br>Chatbot",
+                image: "/images/projects/placeholder.png",
+                link: "https://github.com/Ranieeery/ecommerce-chatbot",
+                icons: ["uil", "uil-robot", "services__icon"],
+                tags: ["Java", "Spring Boot", "I.A.", "JavaScript"],
+                modal: {
+                    title: "ByteBox E-commerce Chatbot",
+                    description: `Uma aplicação Spring Boot que implementa um chatbot 
+                    de atendimento ao cliente para a ByteBox, uma plataforma fictícia 
+                    de comércio eletrônico especializada em componentes de computador 
+                    e eletrônicos.`,
+                    details: [
+                        "Java",
+                        "Spring Boot",
+                        "Spring Webflux",
+                        "Thymeleaf",
+                        "JavaScript",
+                        "jQuery",
+                        "Marked.js",
+                        "OpenAI API",
+                        "JTokkit",
+                        "Inteligência Artificial (I.A.)",
+                    ],
+                },
+            },
+            vendasmvc: {
+                title: "MVC</br>Vendas C#",
+                image: "/images/projects/placeholder.png",
+                link: "https://github.com/Ranieeery/VendasMVC",
+                icons: ["uil", "uil-shopping-basket", "services__icon"],
+                tags: ["C#", ".NET",  "MySQL", "ASP.NET Core MVC"],
+                modal: {
+                    title: "VendasMVC",
+                    description: `Consiste em uma aplicação Web de um sistema de 
+                    vendas com interface gráfica para manipular o banco de dados.`,
+                    details: [
+                        "C#",
+                        ".NET",
+                        "ASP.NET Core MVC",
+                        "Entity Framework",
+                        "LINQ",
+                        "MySQL",
+                        "HTML",
+                        "CSS",
+                        "Bootstrap",
+                        "Padrões de Projeto",
+                    ],
+                },
+            },
+            blog: {
+                title: "Blog</br>Pessoal",
+                image: "/images/projects/placeholder.png",
+                link: "https://ranieeery.github.io/",
+                icons: ["uil", "uil-document-layout-left", "services__icon"],
+                tags: ["Ruby", "Jekyll", "Shell", "Docker"],
+                modal: {
+                    title: "Blog Pessoal",
+                    description: `Blog pessoal feito com Jekyll em um container
+                    docker onde irei postar sobre tecnologia, programação e 
+                    outros assuntos relacionados que sejam do meu interesse.`,
+                    details: [
+                        "Ruby",
+                        "Jekyll",
+                        "Shell",
+                        "Docker",
+                        "HTML",
+                        "Markdown",
+                    ],
+                },
+            },
+            correios: {
+                title: "Busca</br>Correios",
+                image: "/images/projects/placeholder.png",
+                link: "https://github.com/Ranieeery/Busca-CEP",
+                icons: ["uil", "uil-envelope", "services__icon"],
+                tags: ["Java", "Spring Boot", "MySQL", "JUnit"],
+                modal: {
+                    title: "Busca CEP API REST",
+                    description: `Programa que salva uma lista de CEPs extraídas dos
+                    correios em um banco SQL e permite a consulta desses CEPs via API 
+                    REST.`,
+                    details: [
+                        "Java",
+                        "Spring Boot",
+                        "Spring Data JPA",
+                        "Lombok",
+                        "MySQL",
+                        "JUnit",
+                    ],
+                },
+            },
+            fitlife: {
+                title: "Fitlife</br>Academia",
+                image: "/images/projects/placeholder.png",
+                link: "https://fitlife-94c49.web.app/",
+                icons: ["uil", "uil-dumbbell", "services__icon"],
+                tags: ["HTML", "CSS", "Firebase"],
+                modal: {
+                    title: "Fitlife",
+                    description: `Uma landing page de uma academia fictícia`,
+                    details: ["HTML", "CSS", "Firebase"],
+                },
+            },
+            // test: {
+            //     title: "",
+            //     image: "/images/projects/placeholder.png",
+            //     link: "",
+            //     icons: [],
+            //     tags: [],
+            //     modal: {
+            //         title: "",
+            //         description: ``,
+            //         details: [],
+            //     },
+            // },
+        },
+    },
     contact: {
         title: "Contato",
         subtitle: "Entre em contato para conversarmos",
