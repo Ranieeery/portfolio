@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from 'next/headers';
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -14,13 +15,17 @@ export const metadata: Metadata = {
     description: "Portfolio website",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
+    const headersList = await headers();
+    const acceptLanguage = headersList.get('accept-language');
+    const defaultLocale = acceptLanguage?.includes('pt') ? 'pt-BR' : 'en';
+
     return (
-        <html lang="pt-BR">
+        <html lang={defaultLocale}>
             <head>
                 <link
                     rel="stylesheet"
