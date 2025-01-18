@@ -1063,7 +1063,7 @@ img {
     .portfolio__tags {
         gap: 0.25rem;
     }
-    
+
     .portfolio__tag {
         font-size: var(--smaller-font-size);
         padding: 0.2rem 0.5rem;
