@@ -181,7 +181,7 @@ export const ptBR = {
             },
             blog: {
                 title: "Blog</br>Pessoal",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/blog.png",
                 link: "https://ranieeery.github.io/",
                 icons: ["uil", "uil-document-layout-left", "services__icon"],
                 tags: ["Ruby", "Jekyll", "Shell", "Docker"],
