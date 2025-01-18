@@ -1059,7 +1059,6 @@ img {
     transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 350px) {
     .portfolio__tags {
         gap: 0.25rem;
@@ -1071,7 +1070,6 @@ img {
     }
 }
 
-/* Adjust content spacing */
 .portfolio__content {
     padding: 1.5rem;
     display: flex;
@@ -1085,6 +1083,21 @@ img {
 
 .swiper-wrapper {
     transition-timing-function: linear !important;
+}
+
+.services__modal-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--normal-font-size);
+    color: var(--first-color);
+    transition: 0.3s;
+    text-decoration: none;
+    gap: 0.25rem;
+}
+
+.services__modal-button:hover {
+    color: var(--first-color-alt);
+    gap: 0.5rem;
 }
 
 .contact {

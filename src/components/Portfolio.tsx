@@ -160,6 +160,7 @@ export default function Portfolio() {
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
+                                className="services__modal-button"
                             >
                                 {texts.portfolio.send}
                             </a>
