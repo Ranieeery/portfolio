@@ -1142,7 +1142,7 @@ img {
 }
 
 .project__button {
-    margin-bottom: var(--mb-0-75);
+    margin-bottom: var(--mb-2-5);
 }
 
 .button:hover .button__icon {

@@ -91,7 +91,7 @@ export const en = {
                 image: "/images/projects/medical-clinic-api-with-spring.png",
                 link: "https://github.com/Ranieeery/medical-clinic-api-with-spring",
                 icons: ["uil", "uil-clinic-medical", "services__icon"],
-                tags: ["Java", "MySQL", "Spring Boot", "JUnit"],
+                tags: ["Java", "MySQL", "JUnit", "Spring Boot", "Swagger"],
                 modal: {
                     title: "Medical Clinic API",
                     description: `REST API to manage a medical clinic with patients,
@@ -110,7 +110,7 @@ export const en = {
             },
             ia_chatbot: {
                 title: "AI </br> Recommendation",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/ai.png",
                 link: "https://github.com/Ranieeery/openai-ecommerce-api-integration",
                 icons: ["uil", "uil-meeting-board", "services__icon"],
                 tags: ["Java", "IA", "Spring Boot", "OpenAI"],
@@ -130,7 +130,7 @@ export const en = {
             },
             bytebox: {
                 title: "ByteBox<br />Chatbot",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/chatbot.png",
                 link: "https://github.com/Ranieeery/ecommerce-chatbot",
                 icons: ["uil", "uil-robot", "services__icon"],
                 tags: ["Java", "Spring Boot", "I.A.", "JavaScript"],
@@ -155,10 +155,10 @@ export const en = {
             },
             vendasmvc: {
                 title: "MVC<br />Sales C#",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/vendasmvc.png",
                 link: "https://github.com/Ranieeery/VendasMVC",
                 icons: ["uil", "uil-shopping-basket", "services__icon"],
-                tags: ["C#", ".NET",  "MySQL", "ASP.NET Core MVC"],
+                tags: ["C#", ".NET", "MySQL", "ASP.NET Core MVC"],
                 modal: {
                     title: "SalesMVC",
                     description: `A web application for a sales system with a 
@@ -200,10 +200,10 @@ export const en = {
             },
             correios: {
                 title: "Search<br />Correios",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/correios.png",
                 link: "https://github.com/Ranieeery/Busca-CEP",
                 icons: ["uil", "uil-envelope", "services__icon"],
-                tags: ["Java", "Spring Boot", "MySQL", "JUnit"],
+                tags: ["Java", "MySQL", "JUnit", "Spring Boot", "Swagger"],
                 modal: {
                     title: "ZIP Code Search REST API",
                     description: `Program that stores a list of postal codes extracted 
@@ -221,7 +221,7 @@ export const en = {
             },
             fitlife: {
                 title: "Fitlife<br />Gym",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/fitlife.png",
                 link: "https://fitlife-94c49.web.app/",
                 icons: ["uil", "uil-dumbbell", "services__icon"],
                 tags: ["HTML", "CSS", "Firebase"],
@@ -229,6 +229,28 @@ export const en = {
                     title: "Fitlife",
                     description: `A landing page for a fictitious gym`,
                     details: ["HTML", "CSS", "Firebase", "CSS Grid", "Flexbox"],
+                },
+            },
+            portfolio: {
+                title: "Portfolio",
+                image: "/images/projects/portfolio.png",
+                link: "https://www.raniery.dev/",
+                icons: ["uil", "uil-user", "services__icon"],
+                tags: ["TypeScript", "Next.js", "React", "Node.js"],
+                modal: {
+                    title: "Portfolio",
+                    description: `My personal portfolio website, made with Next.js and TypeScript.`,
+                    details: [
+                        "TypeScript",
+                        "Next.js",
+                        "React",
+                        "Node.js",
+                        "CSS Nano",
+                        "HTML",
+                        "CSS",
+                        "Prettier",
+                        "Vercel",
+                    ],
                 },
             },
             // test: {

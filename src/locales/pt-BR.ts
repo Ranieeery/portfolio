@@ -92,7 +92,7 @@ export const ptBR = {
                 image: "/images/projects/medical-clinic-api-with-spring.png",
                 link: "https://github.com/Ranieeery/medical-clinic-api-with-spring",
                 icons: ["uil", "uil-clinic-medical", "services__icon"],
-                tags: ["Java", "MySQL", "Spring Boot", "JUnit"],
+                tags: ["Java", "MySQL", "JUnit", "Spring Boot", "Swagger"],
                 modal: {
                     title: "Clínica Médica API",
                     description: `API Rest para gerenciamento de consultório médico 
@@ -111,7 +111,7 @@ export const ptBR = {
             },
             ia_chatbot: {
                 title: "I.A para </br>Recomendação",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/ai.png",
                 link: "https://github.com/Ranieeery/openai-ecommerce-api-integration",
                 icons: ["uil", "uil-meeting-board", "services__icon"],
                 tags: ["Java", "IA", "Spring Boot", "OpenAI"],
@@ -131,7 +131,7 @@ export const ptBR = {
             },
             bytebox: {
                 title: "ByteBox</br>Chatbot",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/chatbot.png",
                 link: "https://github.com/Ranieeery/ecommerce-chatbot",
                 icons: ["uil", "uil-robot", "services__icon"],
                 tags: ["Java", "Spring Boot", "I.A.", "JavaScript"],
@@ -157,10 +157,10 @@ export const ptBR = {
             },
             vendasmvc: {
                 title: "MVC</br>Vendas C#",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/vendasmvc.png",
                 link: "https://github.com/Ranieeery/VendasMVC",
                 icons: ["uil", "uil-shopping-basket", "services__icon"],
-                tags: ["C#", ".NET",  "MySQL", "ASP.NET Core MVC"],
+                tags: ["C#", ".NET", "MySQL", "ASP.NET Core MVC"],
                 modal: {
                     title: "VendasMVC",
                     description: `Consiste em uma aplicação Web de um sistema de 
@@ -202,10 +202,10 @@ export const ptBR = {
             },
             correios: {
                 title: "Busca</br>Correios",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/correios.png",
                 link: "https://github.com/Ranieeery/Busca-CEP",
                 icons: ["uil", "uil-envelope", "services__icon"],
-                tags: ["Java", "Spring Boot", "MySQL", "JUnit"],
+                tags: ["Java", "MySQL", "JUnit", "Spring Boot", "Swagger"],
                 modal: {
                     title: "Busca CEP API REST",
                     description: `Programa que salva uma lista de CEPs extraídas dos
@@ -218,12 +218,13 @@ export const ptBR = {
                         "Lombok",
                         "MySQL",
                         "JUnit",
+                        "Swagger",
                     ],
                 },
             },
             fitlife: {
                 title: "Fitlife</br>Academia",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/fitlife.png",
                 link: "https://fitlife-94c49.web.app/",
                 icons: ["uil", "uil-dumbbell", "services__icon"],
                 tags: ["HTML", "CSS", "Firebase"],
@@ -231,6 +232,28 @@ export const ptBR = {
                     title: "Fitlife",
                     description: `Uma landing page de uma academia fictícia`,
                     details: ["HTML", "CSS", "Firebase"],
+                },
+            },
+            portfolio: {
+                title: "Portfolio",
+                image: "/images/projects/portfolio.png",
+                link: "https://www.raniery.dev/",
+                icons: ["uil", "uil-user", "services__icon"],
+                tags: ["TypeScript", "Next.js", "React", "Node.js"],
+                modal: {
+                    title: "Portfolio",
+                    description: `Meu portfólio pessoal feito com Next.js e TypeScript`,
+                    details: [
+                        "TypeScript",
+                        "Next.js",
+                        "React",
+                        "Node.js",
+                        "CSS Nano",
+                        "HTML",
+                        "CSS",
+                        "Prettier",
+                        "Vercel",
+                    ],
                 },
             },
             // test: {
