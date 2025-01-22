@@ -47,7 +47,7 @@ export default function About() {
 
                     <div className="about__buttons">
                         <a
-                            href="/pdf/Currículo - Raniery Meireles Goulart.pdf"
+                            href={texts.about.href}
                             download=""
                             className="button button--flex"
                         >

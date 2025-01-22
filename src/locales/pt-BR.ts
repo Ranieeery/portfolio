@@ -25,6 +25,7 @@ export const ptBR = {
                 utilizo o conhecimento obtido nas duas áreas para criar
                 soluções eficientes.`,
         resume: "Baixar currículo",
+        href: "/pdf/Currículo - Raniery Meireles Goulart.pdf",
         info: [
             { title: "2 anos", subtitle: "de experiência </br>na área" },
             { title: "20+", subtitle: "repositórios </br>no Github" },
