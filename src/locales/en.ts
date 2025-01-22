@@ -234,7 +234,7 @@ export const en = {
             portfolio: {
                 title: "Portfolio",
                 image: "/images/projects/portfolio.png",
-                link: "https://www.raniery.dev/",
+                link: "https://github.com/Ranieeery/raniery.dev",
                 icons: ["uil", "uil-user", "services__icon"],
                 tags: ["TypeScript", "Next.js", "React", "Node.js"],
                 modal: {
