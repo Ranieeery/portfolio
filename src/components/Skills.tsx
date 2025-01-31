@@ -167,6 +167,7 @@ const createSkillsData = (texts: typeof en): SkillCategory[] => [
             { name: "Tailwind CSS", icon: SimpleIcons.siTailwindcss },
             { name: "AngularJS", icon: getIcon("angularjs") },
             { name: ".NET", icon: SimpleIcons.siDotnet },
+            { name: "React Native", icon: SimpleIcons.siReact },
         ],
     },
     {
