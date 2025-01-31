@@ -36,9 +36,7 @@ export default function Contact() {
     return (
         <section className="contact section" id="contact">
             <h2 className="section__title">{texts.contact.title}</h2>
-            <span className="section__subtitle">
-                {texts.contact.subtitle}
-            </span>
+            <span className="section__subtitle">{texts.contact.subtitle}</span>
 
             <div className="contact__bg">
                 <div className="project__container container grid">

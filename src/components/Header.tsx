@@ -19,7 +19,11 @@ export default function Header() {
         { href: "#home", icon: "uil-estate", text: texts.header.home },
         { href: "#about", icon: "uil-user", text: texts.header.about },
         { href: "#skills", icon: "uil-books", text: texts.header.skills },
-        { href: "#portfolio", icon: "uil-folder", text: texts.header.portfolio },
+        {
+            href: "#portfolio",
+            icon: "uil-folder",
+            text: texts.header.portfolio,
+        },
         { href: "#contact", icon: "uil-at", text: texts.header.contact },
     ];
 
@@ -91,39 +95,43 @@ export default function Header() {
                             </li>
                         ))}
                         <div className="nav__lang">
-                    <button
-                        className="nav__lang-btn"
-                        onMouseEnter={() => setIsLangMenuOpen(true)}
-                        onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                    >
-                        <i className="uil uil-globe nav__icon"></i>
-                        <span>{texts.header.language}</span>
-                        <i className="uil uil-angle-down"></i>
-                    </button>
-                    <div
-                        className={`nav__lang-menu ${
-                            isLangMenuOpen ? "show-lang-menu" : ""
-                        }`}
-                        onMouseLeave={() => setIsLangMenuOpen(false)}
-                    >
-                        <button
-                            className={`nav__lang-option ${
-                                language === "pt-BR" ? "active" : ""
-                            }`}
-                            onClick={() => handleLanguageChange("pt-BR")}
-                        >
-                            Português
-                        </button>
-                        <button
-                            className={`nav__lang-option ${
-                                language === "en" ? "active" : ""
-                            }`}
-                            onClick={() => handleLanguageChange("en")}
-                        >
-                            English
-                        </button>
-                    </div>
-                </div>
+                            <button
+                                className="nav__lang-btn"
+                                onMouseEnter={() => setIsLangMenuOpen(true)}
+                                onClick={() =>
+                                    setIsLangMenuOpen(!isLangMenuOpen)
+                                }
+                            >
+                                <i className="uil uil-globe nav__icon"></i>
+                                <span>{texts.header.language}</span>
+                                <i className="uil uil-angle-down"></i>
+                            </button>
+                            <div
+                                className={`nav__lang-menu ${
+                                    isLangMenuOpen ? "show-lang-menu" : ""
+                                }`}
+                                onMouseLeave={() => setIsLangMenuOpen(false)}
+                            >
+                                <button
+                                    className={`nav__lang-option ${
+                                        language === "pt-BR" ? "active" : ""
+                                    }`}
+                                    onClick={() =>
+                                        handleLanguageChange("pt-BR")
+                                    }
+                                >
+                                    Português
+                                </button>
+                                <button
+                                    className={`nav__lang-option ${
+                                        language === "en" ? "active" : ""
+                                    }`}
+                                    onClick={() => handleLanguageChange("en")}
+                                >
+                                    English
+                                </button>
+                            </div>
+                        </div>
                     </ul>
 
                     <i

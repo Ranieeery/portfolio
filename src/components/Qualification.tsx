@@ -122,20 +122,22 @@ export default function Qualification() {
     return (
         <section className="qualification section">
             <h2 className="section__title">{texts.qualification.title}</h2>
-            <span className="section__subtitle">{texts.qualification.subtitle}</span>
+            <span className="section__subtitle">
+                {texts.qualification.subtitle}
+            </span>
 
             <div className="qualification__container container">
                 <div className="qualification__tabs">
                     <QualificationTab
                         icon="uil-briefcase-alt"
-                        title= {texts.qualification.tab[0].title}
+                        title={texts.qualification.tab[0].title}
                         target="work"
                         isActive={activeTab === "work"}
                         onClick={setActiveTab}
                     />
                     <QualificationTab
                         icon="uil-graduation-cap"
-                        title= {texts.qualification.tab[1].title}
+                        title={texts.qualification.tab[1].title}
                         target="education"
                         isActive={activeTab === "education"}
                         onClick={setActiveTab}

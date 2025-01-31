@@ -262,12 +262,7 @@ export const ptBR = {
                 image: "/images/projects/placeholder.png",
                 link: "https://github.com/Ranieeery/Habits-tracker",
                 icons: ["uil", "uil-check-square", "services__icon"],
-                tags: [
-                    "TypeScript",
-                    "React",
-                    "Node.js",
-                    "React Native",
-                ],
+                tags: ["TypeScript", "React", "Node.js", "React Native"],
                 modal: {
                     title: "Registro de Hábitos",
                     description: `Aplicação para registrar hábitos diários e objetivos, com versão web e mobile`,

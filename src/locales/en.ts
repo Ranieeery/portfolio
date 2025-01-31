@@ -259,12 +259,7 @@ export const en = {
                 image: "/images/projects/placeholder.png",
                 link: "https://github.com/Ranieeery/Habits-tracker",
                 icons: ["uil", "uil-check-square", "services__icon"],
-                tags: [
-                    "TypeScript",
-                    "React",
-                    "Node.js",
-                    "React Native",
-                ],
+                tags: ["TypeScript", "React", "Node.js", "React Native"],
                 modal: {
                     title: "Habits Tracker",
                     description: `Apllication to track habits and goals, with a web version and a mobile version.`,

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { headers } from 'next/headers';
+import { headers } from "next/headers";
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -21,8 +21,8 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     const headersList = await headers();
-    const acceptLanguage = headersList.get('accept-language');
-    const defaultLocale = acceptLanguage?.includes('pt') ? 'pt-BR' : 'en';
+    const acceptLanguage = headersList.get("accept-language");
+    const defaultLocale = acceptLanguage?.includes("pt") ? "pt-BR" : "en";
 
     return (
         <html lang={defaultLocale}>
