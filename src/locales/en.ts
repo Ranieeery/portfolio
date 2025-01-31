@@ -256,7 +256,7 @@ export const en = {
             },
             habits: {
                 title: "Habits<br />Tracker",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/habits.png",
                 link: "https://github.com/Ranieeery/Habits-tracker",
                 icons: ["uil", "uil-check-square", "services__icon"],
                 tags: ["TypeScript", "React", "Node.js", "React Native"],

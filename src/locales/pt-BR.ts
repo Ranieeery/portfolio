@@ -259,7 +259,7 @@ export const ptBR = {
             },
             habits: {
                 title: "Registro de</br>Hábitos",
-                image: "/images/projects/placeholder.png",
+                image: "/images/projects/habits.png",
                 link: "https://github.com/Ranieeery/Habits-tracker",
                 icons: ["uil", "uil-check-square", "services__icon"],
                 tags: ["TypeScript", "React", "Node.js", "React Native"],
