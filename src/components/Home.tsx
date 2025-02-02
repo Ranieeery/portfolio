@@ -69,7 +69,7 @@ export default function Home() {
                                     className="home__blob-img"
                                     x="18"
                                     y="22"
-                                    href="/images/typing.svg"
+                                    href="/images/typing.png"
                                 />
                             </g>
                         </svg>
