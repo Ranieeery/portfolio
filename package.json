@@ -10,20 +10,20 @@
     },
     "dependencies": {
         "@vercel/speed-insights": "^1.1.0",
-        "next": "15.1.4",
+        "next": "15.1.6",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "simple-icons": "^14.2.0",
-        "swiper": "^11.2.1"
+        "simple-icons": "^14.5.0",
+        "swiper": "^11.2.2"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
-        "@types/node": "^22.10.5",
-        "@types/react": "^19",
+        "@types/node": "^22.13.1",
+        "@types/react": "^19.0.8",
         "@types/react-dom": "^19",
         "cssnano": "^7.0.6",
-        "eslint": "^9",
-        "eslint-config-next": "15.1.4",
+        "eslint": "^9.20.0",
+        "eslint-config-next": "15.1.6",
         "postcss": "^8.5.1",
         "postcss-cli": "^11.0.0",
         "tailwindcss": "^3.4.1",
