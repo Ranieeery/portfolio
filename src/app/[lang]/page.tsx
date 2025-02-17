@@ -2,18 +2,20 @@ import { Metadata } from "next";
 import HomePage from "@/components/HomePage";
 
 type Props = {
-    params: { lang: string };
+    params: Promise<{ lang: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { lang } = await params;
     return {
         title:
-            params.lang === "pt-BR"
+            lang === "pt-BR"
                 ? "Raniery | Portfólio"
                 : "Raniery | Portfolio",
     };
 }
 
-export default function Page({ params: { lang } }: Props) {
+export default async function Page({ params }: Props) {
+    const { lang } = await params;
     return <HomePage lang={lang} />;
 }
