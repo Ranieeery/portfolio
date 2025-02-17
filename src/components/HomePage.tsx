@@ -13,31 +13,31 @@ import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface HomePageProps {
-  lang: string;
+    lang: string;
 }
 
 export default function HomePage({ lang }: HomePageProps) {
-  const { setLanguage } = useLanguage();
+    const { setLanguage } = useLanguage();
 
-  useEffect(() => {
-    if (!localStorage.getItem("language")) {
-      setLanguage(lang);
-    }
-  }, [lang, setLanguage]);
+    useEffect(() => {
+        if (!localStorage.getItem("language")) {
+            setLanguage(lang);
+        }
+    }, [lang, setLanguage]);
 
-  return (
-    <>
-      <Header />
-      <main>
-        <Home />
-        <About />
-        <Skills />
-        <Qualification />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <main>
+                <Home />
+                <About />
+                <Skills />
+                <Qualification />
+                <Portfolio />
+                <Contact />
+            </main>
+            <Footer />
+            <ScrollToTop />
+        </>
+    );
 }

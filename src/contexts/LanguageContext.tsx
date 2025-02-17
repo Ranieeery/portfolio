@@ -8,7 +8,9 @@ type LanguageContextType = {
     setLanguage: (lang: string) => void;
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+    undefined
+);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const [language, setLanguage] = useState("en");
@@ -18,7 +20,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setLanguage(newLang);
         localStorage.setItem("language", newLang);
         document.cookie = `NEXT_LOCALE=${newLang};path=/;max-age=${60 * 60 * 24 * 365}`;
-        
+
         const currentPath = window.location.pathname;
         const newPath = currentPath.replace(/^\/(en|pt-BR)/, `/${newLang}`);
         router.push(newPath);
@@ -31,24 +33,30 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             return;
         }
 
-        const cookies = document.cookie.split(';');
-        const localeCookie = cookies.find(c => c.trim().startsWith('NEXT_LOCALE='));
+        const cookies = document.cookie.split(";");
+        const localeCookie = cookies.find((c) =>
+            c.trim().startsWith("NEXT_LOCALE=")
+        );
         if (localeCookie) {
-            const cookieValue = localeCookie.split('=')[1];
+            const cookieValue = localeCookie.split("=")[1];
             setLanguage(cookieValue);
             localStorage.setItem("language", cookieValue);
             return;
         }
 
         const browserLanguage = navigator.language;
-        const defaultLanguage = browserLanguage.startsWith('pt') ? 'pt-BR' : 'en';
+        const defaultLanguage = browserLanguage.startsWith("pt")
+            ? "pt-BR"
+            : "en";
         setLanguage(defaultLanguage);
         localStorage.setItem("language", defaultLanguage);
         document.cookie = `NEXT_LOCALE=${defaultLanguage};path=/;max-age=${60 * 60 * 24 * 365}`;
     }, []);
 
     return (
-        <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
+        <LanguageContext.Provider
+            value={{ language, setLanguage: handleSetLanguage }}
+        >
             {children}
         </LanguageContext.Provider>
     );

@@ -19,7 +19,11 @@ export default function Header() {
         { href: "#home", icon: "uil-estate", text: texts.header.home },
         { href: "#about", icon: "uil-user", text: texts.header.about },
         { href: "#skills", icon: "uil-books", text: texts.header.skills },
-        { href: "#portfolio", icon: "uil-folder", text: texts.header.portfolio },
+        {
+            href: "#portfolio",
+            icon: "uil-folder",
+            text: texts.header.portfolio,
+        },
         { href: "#contact", icon: "uil-at", text: texts.header.contact },
     ];
 
@@ -38,7 +42,10 @@ export default function Header() {
                 const sectionTop = (section as HTMLElement).offsetTop - 50;
                 const sectionId = section.getAttribute("id") || "";
 
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                if (
+                    scrollY > sectionTop &&
+                    scrollY <= sectionTop + sectionHeight
+                ) {
                     setActiveSection(sectionId);
                 }
             });
@@ -63,7 +70,10 @@ export default function Header() {
                     &#60;Raniery&#62;
                 </Link>
 
-                <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
+                <div
+                    className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}
+                    id="nav-menu"
+                >
                     <ul className="nav__list grid">
                         {menuItems.map((item) => (
                             <li key={item.href} className="nav__item">
@@ -72,7 +82,10 @@ export default function Header() {
                                     className={`nav__link ${activeSection === item.href.slice(1) ? "active-link" : ""}`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    <i className={`uil ${item.icon} nav__icon`}></i> {item.text}
+                                    <i
+                                        className={`uil ${item.icon} nav__icon`}
+                                    ></i>{" "}
+                                    {item.text}
                                 </Link>
                             </li>
                         ))}
@@ -80,7 +93,9 @@ export default function Header() {
                             <button
                                 className="nav__lang-btn"
                                 onMouseEnter={() => setIsLangMenuOpen(true)}
-                                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                                onClick={() =>
+                                    setIsLangMenuOpen(!isLangMenuOpen)
+                                }
                             >
                                 <i className="uil uil-globe nav__icon"></i>
                                 <span>{texts.header.language}</span>
@@ -92,7 +107,9 @@ export default function Header() {
                             >
                                 <button
                                     className={`nav__lang-option ${language === "pt-BR" ? "active" : ""}`}
-                                    onClick={() => handleLanguageChange("pt-BR")}
+                                    onClick={() =>
+                                        handleLanguageChange("pt-BR")
+                                    }
                                 >
                                     Português
                                 </button>
@@ -106,7 +123,10 @@ export default function Header() {
                         </div>
                     </ul>
 
-                    <i className="uil uil-times nav__close" onClick={() => setIsMenuOpen(false)}></i>
+                    <i
+                        className="uil uil-times nav__close"
+                        onClick={() => setIsMenuOpen(false)}
+                    ></i>
                 </div>
 
                 <div className="nav__btns">
@@ -115,11 +135,17 @@ export default function Header() {
                         onClick={() => {
                             setIsDarkMode(!isDarkMode);
                             document.body.classList.toggle("dark-theme");
-                            localStorage.setItem("theme", isDarkMode ? "light" : "dark");
+                            localStorage.setItem(
+                                "theme",
+                                isDarkMode ? "light" : "dark"
+                            );
                         }}
                     ></i>
 
-                    <div className="nav__toggle" onClick={() => setIsMenuOpen(true)}>
+                    <div
+                        className="nav__toggle"
+                        onClick={() => setIsMenuOpen(true)}
+                    >
                         <i className="uil uil-apps"></i>
                     </div>
                 </div>
