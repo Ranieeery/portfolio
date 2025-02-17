@@ -19,17 +19,12 @@ export default function Header() {
         { href: "#home", icon: "uil-estate", text: texts.header.home },
         { href: "#about", icon: "uil-user", text: texts.header.about },
         { href: "#skills", icon: "uil-books", text: texts.header.skills },
-        {
-            href: "#portfolio",
-            icon: "uil-folder",
-            text: texts.header.portfolio,
-        },
+        { href: "#portfolio", icon: "uil-folder", text: texts.header.portfolio },
         { href: "#contact", icon: "uil-at", text: texts.header.contact },
     ];
 
     const handleLanguageChange = (lang: string) => {
         setLanguage(lang);
-        localStorage.setItem("language", lang);
         setIsLangMenuOpen(false);
     };
 
@@ -43,10 +38,7 @@ export default function Header() {
                 const sectionTop = (section as HTMLElement).offsetTop - 50;
                 const sectionId = section.getAttribute("id") || "";
 
-                if (
-                    scrollY > sectionTop &&
-                    scrollY <= sectionTop + sectionHeight
-                ) {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                     setActiveSection(sectionId);
                 }
             });
@@ -67,30 +59,20 @@ export default function Header() {
     return (
         <header className="header" id="header">
             <nav className="nav container">
-                <Link href="#" className="nav__logo">
+                <Link href={`/${language}`} className="nav__logo">
                     &#60;Raniery&#62;
                 </Link>
 
-                <div
-                    className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}
-                    id="nav-menu"
-                >
+                <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
                     <ul className="nav__list grid">
                         {menuItems.map((item) => (
                             <li key={item.href} className="nav__item">
                                 <Link
                                     href={item.href}
-                                    className={`nav__link ${
-                                        activeSection === item.href.slice(1)
-                                            ? "active-link"
-                                            : ""
-                                    }`}
+                                    className={`nav__link ${activeSection === item.href.slice(1) ? "active-link" : ""}`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    <i
-                                        className={`uil ${item.icon} nav__icon`}
-                                    ></i>{" "}
-                                    {item.text}
+                                    <i className={`uil ${item.icon} nav__icon`}></i> {item.text}
                                 </Link>
                             </li>
                         ))}
@@ -98,34 +80,24 @@ export default function Header() {
                             <button
                                 className="nav__lang-btn"
                                 onMouseEnter={() => setIsLangMenuOpen(true)}
-                                onClick={() =>
-                                    setIsLangMenuOpen(!isLangMenuOpen)
-                                }
+                                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                             >
                                 <i className="uil uil-globe nav__icon"></i>
                                 <span>{texts.header.language}</span>
                                 <i className="uil uil-angle-down"></i>
                             </button>
                             <div
-                                className={`nav__lang-menu ${
-                                    isLangMenuOpen ? "show-lang-menu" : ""
-                                }`}
+                                className={`nav__lang-menu ${isLangMenuOpen ? "show-lang-menu" : ""}`}
                                 onMouseLeave={() => setIsLangMenuOpen(false)}
                             >
                                 <button
-                                    className={`nav__lang-option ${
-                                        language === "pt-BR" ? "active" : ""
-                                    }`}
-                                    onClick={() =>
-                                        handleLanguageChange("pt-BR")
-                                    }
+                                    className={`nav__lang-option ${language === "pt-BR" ? "active" : ""}`}
+                                    onClick={() => handleLanguageChange("pt-BR")}
                                 >
                                     Português
                                 </button>
                                 <button
-                                    className={`nav__lang-option ${
-                                        language === "en" ? "active" : ""
-                                    }`}
+                                    className={`nav__lang-option ${language === "en" ? "active" : ""}`}
                                     onClick={() => handleLanguageChange("en")}
                                 >
                                     English
@@ -134,31 +106,20 @@ export default function Header() {
                         </div>
                     </ul>
 
-                    <i
-                        className="uil uil-times nav__close"
-                        onClick={() => setIsMenuOpen(false)}
-                    ></i>
+                    <i className="uil uil-times nav__close" onClick={() => setIsMenuOpen(false)}></i>
                 </div>
 
                 <div className="nav__btns">
                     <i
-                        className={`uil ${
-                            isDarkMode ? "uil-sun" : "uil-moon"
-                        } change-theme`}
+                        className={`uil ${isDarkMode ? "uil-sun" : "uil-moon"} change-theme`}
                         onClick={() => {
                             setIsDarkMode(!isDarkMode);
                             document.body.classList.toggle("dark-theme");
-                            localStorage.setItem(
-                                "theme",
-                                isDarkMode ? "light" : "dark"
-                            );
+                            localStorage.setItem("theme", isDarkMode ? "light" : "dark");
                         }}
                     ></i>
 
-                    <div
-                        className="nav__toggle"
-                        onClick={() => setIsMenuOpen(true)}
-                    >
+                    <div className="nav__toggle" onClick={() => setIsMenuOpen(true)}>
                         <i className="uil uil-apps"></i>
                     </div>
                 </div>
