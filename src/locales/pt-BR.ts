@@ -28,7 +28,7 @@ export const ptBR = {
         info: [
             { title: "2 anos", subtitle: "de experiência </br>na área" },
             { title: "20+", subtitle: "repositórios </br>no Github" },
-            { title: "03", subtitle: "empresas </br>trabalhadas" },
+            { title: "04", subtitle: "empresas </br>trabalhadas" },
         ],
     },
     skills: {
@@ -65,9 +65,14 @@ export const ptBR = {
         ],
         work: [
             {
+                title: "Desenvolvedor Junior",
+                subtitle: "Engineering",
+                dateRange: "mar 2025 - atual",
+            },
+            {
                 title: "Estagiário em Desenvolvimento de Software",
                 subtitle: "Empresa 1",
-                dateRange: "ago 2023 - atual",
+                dateRange: "ago 2023 - mar 2025",
             },
             {
                 title: "Analista de Desenvolvimento de Sistemas",

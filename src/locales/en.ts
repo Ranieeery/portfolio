@@ -28,7 +28,7 @@ export const en = {
         info: [
             { title: "2 years", subtitle: "of experience </br>in field" },
             { title: "20+", subtitle: "repositories </br>in Github" },
-            { title: "03", subtitle: "companies </br>worked" },
+            { title: "04", subtitle: "companies </br>worked" },
         ],
     },
     skills: {
@@ -65,9 +65,14 @@ export const en = {
         ],
         work: [
             {
+                title: "Junior Software Developer",
+                subtitle: "Engineering",
+                dateRange: "mar 2025 - current",
+            },
+            {
                 title: "Software Development Intern",
                 subtitle: "Empresa 1",
-                dateRange: "aug 2023 - current",
+                dateRange: "aug 2023 - mar 2025",
             },
             {
                 title: "Systems Development Analyst",
