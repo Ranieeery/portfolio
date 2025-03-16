@@ -141,7 +141,7 @@ const createSkillsData = (texts: typeof en): SkillCategory[] => [
             { name: "JavaScript", icon: SimpleIcons.siJavascript },
             { name: "TypeScript", icon: SimpleIcons.siTypescript },
             { name: "Python", icon: SimpleIcons.siPython },
-            { name: "Ruby", icon: SimpleIcons.siRuby },
+            { name: "Go", icon: SimpleIcons.siGo },
             { name: "C#", icon: getIcon("csharp") },
             { name: "SQL", icon: getIcon("sql") },
             { name: "Shell", icon: SimpleIcons.siGnubash },
